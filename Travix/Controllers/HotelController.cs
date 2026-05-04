@@ -17,7 +17,16 @@ public class HotelController : Controller
     public async Task<IActionResult> List(string city, string checkIn, string checkOut, int? adults, string? currency, string? language, int? minPrice, int? maxPrice, string? room)
     {
         var client = _httpClientFactory.CreateClient();
-
+        
+        ViewBag.City = city;
+        ViewBag.CheckIn = checkIn;
+        ViewBag.CheckOut = checkOut;
+        ViewBag.Adults = adults;
+        ViewBag.Currency = currency;
+        ViewBag.Language = language;
+        ViewBag.MinPrice = minPrice;
+        ViewBag.MaxPrice = maxPrice;
+        ViewBag.Room = room;
         
         var response = await client.GetAsync(
             $"http://localhost:5049/api/Hotels?city={city}&checkIn={checkIn}&checkOut={checkOut}&adults={adults}&currency={currency}&language={language}&minPrice={minPrice}&maxPrice={maxPrice}&room={room}"
@@ -30,9 +39,6 @@ public class HotelController : Controller
         var jsonData = JsonConvert.DeserializeObject<HotelListDto>(json);
 
         var hotels = jsonData?.data?.hotels ?? new List<Hotel>();
-        
-        ViewBag.CheckIn = checkIn;
-        ViewBag.CheckOut = checkOut;
 
         return View(hotels);
     }
