@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travix", "Travix\Travix.csproj", "{5C991942-FB77-443C-AF63-7F933C904029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{4E64FE46-4A85-49FE-AAC1-68E889191875}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C991942-FB77-443C-AF63-7F933C904029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C991942-FB77-443C-AF63-7F933C904029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C991942-FB77-443C-AF63-7F933C904029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C991942-FB77-443C-AF63-7F933C904029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E64FE46-4A85-49FE-AAC1-68E889191875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E64FE46-4A85-49FE-AAC1-68E889191875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E64FE46-4A85-49FE-AAC1-68E889191875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E64FE46-4A85-49FE-AAC1-68E889191875}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

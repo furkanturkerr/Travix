@@ -1,0 +1,23 @@
+@model List<Travix.Dtos.Hotel>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+        
+        <img src="@item.property.photoUrls?.FirstOrDefault()" width="200" />
+
+        <h3>@item.property.name</h3>
+
+        <p>⭐ @item.property.reviewScore (@item.property.reviewScoreWord)</p>
+
+        <p>💰 @item.property.priceBreakdown.grossPrice.value 
+            @item.property.priceBreakdown.grossPrice.currency</p>
+        
+        <a href="">Detay</a>
+
+    </div>
+}

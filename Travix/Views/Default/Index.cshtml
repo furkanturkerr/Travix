@@ -1,0 +1,38 @@
+@model dynamic
+
+@{
+    Layout = null;
+}
+
+Anasayfa
+
+<form method="post" asp-controller="Hotel" asp-action="List">
+    <label>Şehir</label>
+    <input type="text" name="city" class="form-control"/>
+    <br/>
+    <label>Giriş Tarihi</label>
+    <input type="date" name="checkIn" class="form-control"/>
+    <br/>
+    <label>Çıkış Tarihi</label>
+    <input type="date" name="checkOut" class="form-control"/>
+    <br/>
+    <label>Kaç kişi</label>
+    <input type="number" name="adults" class="form-control"/>
+    <br/>
+    <label>Para Birimi</label>
+    <input type="text" name="currency" value="AED" class="form-control"/>
+    <br/>
+    <label>Max para</label>
+    <input type="number" name="maxPrice" class="form-control"/>
+    <br/>
+    <label>Min para</label>
+    <input type="number" name="minPrice" class="form-control"/>
+    <br/>
+    <label>Oda Syısı</label>
+    <input type="number" name="room" class="form-control"/>
+    <br/>
+    <label>Dil</label>
+    <input type="text" name="language" value="en-us" class="form-control"/>
+    <br/>
+    <button>Bul</button>
+</form>
