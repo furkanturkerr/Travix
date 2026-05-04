@@ -20,7 +20,7 @@ namespace Travix.WebAPI.Controllers
         }
         
         [HttpGet]
-        public async Task<IActionResult> GetHotels(string city, string checkIn, string checkOut, int adults, string currency, string language, int minPrice, int maxPrice, string room)
+        public async Task<IActionResult> GetHotels(string city, string checkIn, string checkOut, int? adults, string? currency, string? language, int? minPrice, int? maxPrice, string? room)
         {
             var client = _httpClientFactory.CreateClient();
             var request = new HttpRequestMessage
@@ -42,6 +42,11 @@ namespace Travix.WebAPI.Controllers
                 dynamic destData = JsonConvert.DeserializeObject(destBody);
                 destId = destData?.data?[0]?.dest_id;
             }
+
+            adults = adults is null || adults < 1 ? 1 : adults;
+            room = string.IsNullOrWhiteSpace(room) ? "1" : room;
+            currency = string.IsNullOrWhiteSpace(currency) ? "AED" : currency;
+            language = string.IsNullOrWhiteSpace(language) ? "en-us" : language;
             
             var priceParams = (minPrice > 0 || maxPrice > 0)
                 ? $"&price_min={minPrice}&price_max={maxPrice}"
@@ -66,17 +71,17 @@ namespace Travix.WebAPI.Controllers
             
         }
 
-        [HttpGet("GetHotelDetails/{hotelId}")]
-        public async Task<IActionResult> GetHotelDetails(int id)
+        [HttpGet("GetHotelDetails")]
+        public async Task<IActionResult> GetHotelDetails(int id, string checkIn, string checkOut)
         {
-            var client = new HttpClient();
+            var client = _httpClientFactory.CreateClient();
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://booking-com15.p.rapidapi.com/api/v1/hotels/getHotelDetails?hotel_id=191605&arrival_date=2026-05-06&departure_date=2026-05-14&adults=1&children_age=1%2C17&room_qty=1&units=metric&temperature_unit=c&languagecode=en-us&currency_code=EUR"),
+                RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/getHotelDetails?hotel_id={id}&arrival_date={checkIn}&departure_date={checkOut}&adults=1&children_age=1%2C17&room_qty=1&units=metric&temperature_unit=c&languagecode=en-us&currency_code=EUR"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "228321f524msh2f2cbcfabd83e56p1d01fbjsn7b1af1c27a41" },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi"] },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
@@ -84,9 +89,8 @@ namespace Travix.WebAPI.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                return Ok(body);
             }
-            return Ok();
         }
         
         

@@ -4,20 +4,37 @@
     Layout = null;
 }
 
-@foreach (var item in Model)
+@if (Model != null && Model.Any())
 {
-    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
-        
-        <img src="@item.property.photoUrls?.FirstOrDefault()" width="200" />
+    foreach (var item in Model)
+    {
+        <div style="border:1px solid #ddd; margin:15px; padding:15px; border-radius:12px;">
+            
+            <img src="@item.property?.photoUrls?.FirstOrDefault()" 
+                 width="220" 
+                 style="border-radius:10px;" />
 
-        <h3>@item.property.name</h3>
+            <h3>@item.property?.name</h3>
 
-        <p>⭐ @item.property.reviewScore (@item.property.reviewScoreWord)</p>
+            <p>
+                ⭐ @item.property?.reviewScore 
+                (@item.property?.reviewScoreWord)
+            </p>
 
-        <p>💰 @item.property.priceBreakdown.grossPrice.value 
-            @item.property.priceBreakdown.grossPrice.currency</p>
-        
-        <a href="">Detay</a>
+            <p>
+                💰 @item.property?.priceBreakdown?.grossPrice?.value
+                @item.property?.priceBreakdown?.grossPrice?.currency
+            </p>
 
-    </div>
+            <a href="/Hotel/Details?id=@item.property?.id&checkIn=@ViewBag.CheckIn&checkOut=@ViewBag.CheckOut"
+               style="display:inline-block; padding:10px 16px; background:#f59e0b; color:white; text-decoration:none; border-radius:8px;">
+                Detayları Gör
+            </a>
+
+        </div>
+    }
+}
+else
+{
+    <p>Otel bulunamadı.</p>
 }

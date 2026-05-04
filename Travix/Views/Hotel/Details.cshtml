@@ -1,0 +1,102 @@
+@model Travix.Dtos.HotelDetailDto
+
+@{
+    var hotel = Model.data;
+    var room = hotel.rooms.FirstOrDefault().Value;
+    var mainPhoto = room?.photos?.FirstOrDefault()?.url_max750;
+    var price = hotel.product_price_breakdown?.gross_amount?.amount_rounded;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@hotel.hotel_name</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body style="background:#f5f6fa;">
+
+<div class="container mt-4">
+
+    <!-- 🔥 OTEL ADI -->
+    <h2>@hotel.hotel_name</h2>
+    <p class="text-muted">@hotel.city - @hotel.address</p>
+
+    <!-- 🔥 GALERİ -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <img src="@mainPhoto" class="img-fluid rounded" style="height:400px; width:100%; object-fit:cover;" />
+        </div>
+
+        <div class="col-md-4">
+            @foreach (var img in room?.photos?.Take(3) ?? new List<Travix.Dtos.HotelDetailDto.Photo>())
+            {
+                <img src="@img.url_max750" class="img-fluid rounded mb-2" style="height:120px; width:100%; object-fit:cover;" />
+            }
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- 🔥 SOL -->
+        <div class="col-md-8">
+
+            <!-- Açıklama -->
+            <h5>Oda Açıklaması</h5>
+            <p>@room?.description</p>
+
+            <!-- Özellikler -->
+            <h5>Özellikler</h5>
+            <ul>
+                @foreach (var item in hotel.property_highlight_strip ?? new List<Travix.Dtos.HotelDetailDto.PropertyHighlight>())
+                {
+                    <li>@item.name</li>
+                }
+            </ul>
+
+            <!-- Facilities -->
+            <h5>En Popüler Özellikler</h5>
+            <div class="row">
+                @foreach (var f in hotel.facilities_block?.facilities?.Take(6) ?? new List<Travix.Dtos.HotelDetailDto.Facility>())
+                {
+                    <div class="col-md-4">
+                        ✔ @f.name
+                    </div>
+                }
+            </div>
+
+        </div>
+
+        <!-- 🔥 SAĞ FİYAT KART -->
+        <div class="col-md-4">
+
+            <div class="card shadow p-3">
+
+                <h4 class="text-primary">@price</h4>
+
+                <p>
+                    <b>Oda:</b> @hotel.block?.FirstOrDefault()?.room_name
+                </p>
+
+                <p>
+                    <b>Yemek:</b> @hotel.block?.FirstOrDefault()?.mealplan
+                </p>
+
+                <p class="text-success">
+                    @hotel.block?.FirstOrDefault()?.paymentterms?.cancellation?.type_translation
+                </p>
+
+                <button class="btn btn-warning w-100 mt-2">
+                    Rezervasyon Yap
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

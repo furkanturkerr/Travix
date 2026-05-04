@@ -35,3 +35,4 @@
 /Users/furkanturker/RiderProjects/Travix/WebAPI/obj/Debug/net8.0/WebAPI.genruntimeconfig.cache
 /Users/furkanturker/RiderProjects/Travix/WebAPI/obj/Debug/net8.0/ref/WebAPI.dll
 /Users/furkanturker/RiderProjects/Travix/WebAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/furkanturker/RiderProjects/Travix/WebAPI/obj/Debug/net8.0/WebAPI.sourcelink.json

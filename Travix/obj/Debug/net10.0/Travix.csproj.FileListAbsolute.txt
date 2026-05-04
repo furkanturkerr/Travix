@@ -102,3 +102,4 @@
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/Travix.genruntimeconfig.cache
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/ref/Travix.dll
 /Users/furkanturker/RiderProjects/Travix/Travix/bin/Debug/net10.0/AutoMapper.dll
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/Travix.sourcelink.json
