@@ -5,431 +5,374 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "secondary-fixed-dim": "#ffb95f",
-                        "on-error": "#ffffff",
-                        "inverse-surface": "#303032",
-                        "on-secondary-container": "#684000",
-                        "tertiary-container": "#271901",
-                        "on-primary-fixed": "#131b2e",
-                        "on-error-container": "#93000a",
-                        "surface-tint": "#565e74",
-                        "on-primary-container": "#7c839b",
+                        "primary": "#0F172A", // Dark Navy
+                        "on-primary": "#ffffff",
+                        "secondary": "#EA580C", // Orange accent
                         "on-secondary": "#ffffff",
-                        "surface-container-high": "#eae7e9",
-                        "secondary-container": "#fea619",
-                        "secondary-fixed": "#ffddb8",
-                        "inverse-primary": "#bec6e0",
-                        "surface-container-lowest": "#ffffff",
-                        "on-secondary-fixed": "#2a1700",
-                        "on-tertiary-fixed-variant": "#574425",
-                        "primary-container": "#131b2e",
-                        "on-primary-container": "#7c839b",
-                        "on-tertiary": "#ffffff",
-                        "primary-fixed": "#dae2fd",
-                        "on-tertiary-container": "#98805d",
-                        "surface-bright": "#fcf8fa",
-                        "secondary": "#855300",
-                        "on-tertiary-fixed": "#271901",
-                        "on-primary-fixed-variant": "#3f465c",
-                        "background": "#fcf8fa",
-                        "surface": "#fcf8fa",
-                        "on-surface-variant": "#45464d",
-                        "on-secondary-fixed-variant": "#653e00",
-                        "on-background": "#1b1b1d",
-                        "surface-container-low": "#f6f3f5",
-                        "primary-fixed-dim": "#bec6e0",
-                        "error": "#ba1a1a",
-                        "surface-dim": "#dcd9db",
-                        "outline-variant": "#c6c6cd",
-                        "tertiary": "#000000",
-                        "tertiary-fixed-dim": "#dec29a",
-                        "surface-container": "#f0edef",
-                        "error-container": "#ffdad6",
-                        "surface-container-highest": "#e4e2e4",
-                        "inverse-on-surface": "#f3f0f2",
-                        "tertiary-fixed": "#fcdeb5",
-                        "on-surface": "#1b1b1d",
-                        "surface-variant": "#e4e2e4",
-                        "primary": "#000000",
-                        "outline": "#76777d",
-                        "on-primary": "#ffffff"
+                        "background": "#F8FAFC", // Soft Gray from request
+                        "surface": "#ffffff",
+                        "outline": "#E2E8F0",
+                        "on-surface-variant": "#64748B",
+                        "surface-container": "#F1F5F9"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.25rem", // 20px radius from request
+                        "2xl": "1.25rem", // 20px radius from request
                         "full": "9999px"
                     },
                     "spacing": {
                         "xl": "80px",
-                        "sm": "12px",
                         "lg": "48px",
-                        "base": "8px",
-                        "xs": "4px",
-                        "gutter": "24px",
                         "md": "24px",
-                        "container-max": "1280px"
+                        "sm": "12px",
+                        "base": "8px"
                     },
                     "fontFamily": {
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "display-xl": ["Noto Serif"],
-                        "body-sm": ["Inter"],
-                        "headline-md": ["Noto Serif"],
-                        "headline-lg": ["Noto Serif"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                        "body": ["Inter", "sans-serif"],
+                        "display": ["Noto Serif", "serif"]
                     }
                 },
             },
         }
     </script>
     <style>
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Noto Serif', serif; }
+        .premium-shadow {
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08); /* Soft shadow from request */
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md">
-<!-- Header (TopNavBar Shared Component) -->
-<header class="fixed top-0 w-full z-50 border-b border-white/20 bg-white/70 backdrop-blur-md shadow-sm">
-    <nav class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
-        <div class="text-2xl font-bold tracking-tighter text-slate-900">StayFinder</div>
-        <div class="hidden md:flex gap-8 items-center font-noto-serif font-medium tracking-tight">
-            <a class="text-slate-600 hover:text-amber-600 transition-colors" href="#">Home</a>
-            <a class="text-slate-900 border-b-2 border-amber-500 pb-1" href="#">Hotels</a>
-            <a class="text-slate-600 hover:text-amber-600 transition-colors" href="#">Destinations</a>
-            <a class="text-slate-600 hover:text-amber-600 transition-colors" href="#">Blog</a>
-            <a class="text-slate-600 hover:text-amber-600 transition-colors" href="#">Contact</a>
+<body class="bg-background text-primary antialiased">
+<!-- Header (Unified Travix Style) -->
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-outline">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
+        <div class="text-2xl font-bold tracking-tight text-primary flex items-center gap-2">
+            <span class="bg-primary text-white p-1 rounded">Tx</span>
+            <span>Travix</span>
         </div>
-        <button class="bg-primary text-on-primary px-6 py-2 rounded font-label-bold hover:opacity-90 transition-all scale-95 transition-transform duration-200">
-            Book Now
-        </button>
+        <div class="hidden lg:flex gap-8 items-center font-medium text-sm">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Anasayfa</a>
+            <a class="text-primary font-semibold border-b-2 border-secondary pb-1" href="#">Oteller</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Destinasyonlar</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Blog</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">İletişim</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="text-sm font-semibold hover:text-secondary transition-colors">Giriş Yap</button>
+            <button class="bg-secondary text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 hover:opacity-90 transition-all shadow-md">
+                <span class="material-symbols-outlined text-sm">search</span>
+                Ara
+            </button>
+        </div>
     </nav>
 </header>
-<main class="mt-20 pt-10">
-    <!-- Hotel Info Header -->
-    <section class="max-w-7xl mx-auto px-8 mb-base">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-                <div class="flex items-center gap-2 mb-2">
-                    <div class="flex text-secondary-container">
-                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<main class="mt-20 pt-8 pb-xl">
+    <!-- Hotel Title Section -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 mb-8">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+            <div class="space-y-2">
+                <nav class="flex text-xs text-on-surface-variant gap-2 mb-4">
+                    <a class="hover:text-primary" href="#">İtalya</a> <span>/</span> <a class="hover:text-primary" href="#">Milano</a>
+                </nav>
+                <h1 class="text-4xl lg:text-5xl font-bold text-primary">The Royal Horizon Resort</h1>
+                <div class="flex items-center gap-4 text-on-surface-variant text-sm">
+                    <div class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary text-base">location_on</span>
+                        <span>Duomo Meydanı, Milano, İtalya</span>
                     </div>
-                    <span class="font-label-bold text-outline uppercase tracking-widest text-[10px]">Lüks Resort</span>
-                </div>
-                <h1 class="font-headline-lg text-display-xl text-primary mb-2">The Royal Horizon Resort</h1>
-                <div class="flex items-center gap-2 text-on-surface-variant">
-                    <span class="material-symbols-outlined text-md">location_on</span>
-                    <span class="font-body-md">Milano, İtalya — Duomo Meydanı'na 500m mesafede</span>
+                    <div class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-secondary text-base">star</span>
+                        <span class="font-bold text-primary">4.8</span>
+                        <span>(1,240 Değerlendirme)</span>
+                    </div>
+                    <div class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">
+                        Son 4 Oda
+                    </div>
                 </div>
             </div>
-            <div class="flex items-center gap-4">
-                <div class="text-right">
-                    <div class="font-label-bold text-primary">Mükemmel</div>
-                    <div class="text-body-sm text-outline">1,240 Değerlendirme</div>
+            <div class="lg:text-right w-full lg:w-auto">
+                <div class="text-[10px] text-on-surface-variant mb-1 uppercase tracking-widest font-bold">Gecelik Başlayan Fiyatlar</div>
+                <div class="flex items-baseline lg:justify-end gap-1">
+                    <span class="text-3xl font-bold text-primary">€850</span>
                 </div>
-                <div class="bg-primary text-on-primary font-bold text-xl h-14 w-14 flex items-center justify-center rounded-lg shadow-lg">
-                    9.6
-                </div>
+                <button class="text-secondary text-xs font-bold underline mt-2 hover:text-primary transition-colors">Fiyat Detaylarını Gör</button>
             </div>
         </div>
     </section>
     <!-- Gallery Grid -->
-    <section class="max-w-7xl mx-auto px-8 mb-lg">
-        <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px]">
-            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl">
-                <img alt="Hotel Hero" class="w-full h-full object-cover" data-alt="A grand entrance of a luxury hotel in Milan with marble columns, warm ambient lighting, and a perspective that invites the viewer inside. The atmosphere is sophisticated and quiet, showcasing premium architecture and golden accents under a soft evening sky. High-end Mediterranean aesthetics blend with modern minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcspP6UD0ZYhgDwbWgYP03WutpFLGDnqTqssYzYufjxtIMTCSvR8pISJu85NMZTNewV7gJK3ans3y1Yw4vnPc4TWMxT-UwsLEaTBcItmldR-wIxg__xyRimdE_x80dICyZQwwK7b-133tb48gxWMGzViIsoSy20EE9ndjC-H9pxVKClWSJP6c0NNcYoRT9Mi9NjPbormSck-hJUzqDddV3ps2lbrLevDhIBfCy-2JWTi8tSYY7lO5W_3MVUgSWZZnD4NSz43W-q8"/>
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[500px] md:h-[600px] relative group">
+            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl">
+                <img alt="Hotel Main" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcspP6UD0ZYhgDwbWgYP03WutpFLGDnqTqssYzYufjxtIMTCSvR8pISJu85NMZTNewV7gJK3ans3y1Yw4vnPc4TWMxT-UwsLEaTBcItmldR-wIxg__xyRimdE_x80dICyZQwwK7b-133tb48gxWMGzViIsoSy20EE9ndjC-H9pxVKClWSJP6c0NNcYoRT9Mi9NjPbormSck-hJUzqDddV3ps2lbrLevDhIBfCy-2JWTi8tSYY7lO5W_3MVUgSWZZnD4NSz43W-q8"/>
             </div>
-            <div class="relative overflow-hidden rounded-xl">
-                <img alt="Pool View" class="w-full h-full object-cover" data-alt="A luxury hotel infinity pool overlooking the city of Milan at sunset. The water is crystalline and reflects the warm orange and purple hues of the sky. Elegant lounge chairs are positioned symmetrically along the poolside, creating a sense of serene order and elite relaxation. The lighting is low and moody." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBla7UbYrNEhsVDl3o8usligdIiJ6CHe3fBjsTghKqiw4nZ2JhDHhz_qmBqDL9flQJe3fXahvbhrwpiW95gru0wrqmx9TUlrFjdUaTqXSG93-SxivWgfYxbsTiHM4jV8sHqGcxLi_kS2bf7NtFnAqUXDAmKJhKpkb55qBOvl5-PPD7Mk1Tcf4HXiqISnI-XzsWA8uYmJYEkgLoGlsTT3yfvEQnUF7GCboadFOSXxT-0gUDCMDfPnRr6yYqCo12tx9wknDu81obsh4Q"/>
+            <div class="relative overflow-hidden rounded-2xl hidden md:block">
+                <img alt="Pool" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBla7UbYrNEhsVDl3o8usligdIiJ6CHe3fBjsTghKqiw4nZ2JhDHhz_qmBqDL9flQJe3fXahvbhrwpiW95gru0wrqmx9TUlrFjdUaTqXSG93-SxivWgfYxbsTiHM4jV8sHqGcxLi_kS2bf7NtFnAqUXDAmKJhKpkb55qBOvl5-PPD7Mk1Tcf4HXiqISnI-XzsWA8uYmJYEkgLoGlsTT3yfvEQnUF7GCboadFOSXxT-0gUDCMDfPnRr6yYqCo12tx9wknDu81obsh4Q"/>
             </div>
-            <div class="relative overflow-hidden rounded-xl">
-                <img alt="Suite View" class="w-full h-full object-cover" data-alt="A high-end hotel suite with minimalist Italian furniture and floor-to-ceiling windows showing the Milan cathedral in the distance. The interior features soft beige tones, rich wooden textures, and glass accents. The morning light is bright and airy, highlighting the clean lines and premium fabric of the bed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLaBl2Pc7aXVDUVuuKxs6_BfN6qHyhViTBIjgija3ApRsH9zBXUj-_i0nphhCGiySTgu9-lUazZrLVyXBSt5tl3SuCptcng7fimN3e2yuTKd-o0ruiICBTYHl0E5NCIVWJnyboEnNxvn0uwmFe9noWjRKW505nZehMIhiv4m9rYEFqr6AZON4lq4-A4zqhS1ANspOcpQABxRSjIUtOS52C-AscbvkNX5bJ-IBYK9xhDD5iKVYgDjDyhHoZUvbFA22OGbE178eKW5g"/>
+            <div class="relative overflow-hidden rounded-2xl hidden md:block">
+                <img alt="Suite" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLaBl2Pc7aXVDUVuuKxs6_BfN6qHyhViTBIjgija3ApRsH9zBXUj-_i0nphhCGiySTgu9-lUazZrLVyXBSt5tl3SuCptcng7fimN3e2yuTKd-o0ruiICBTYHl0E5NCIVWJnyboEnNxvn0uwmFe9noWjRKW505nZehMIhiv4m9rYEFqr6AZON4lq4-A4zqhS1ANspOcpQABxRSjIUtOS52C-AscbvkNX5bJ-IBYK9xhDD5iKVYgDjDyhHoZUvbFA22OGbE178eKW5g"/>
             </div>
-            <div class="relative overflow-hidden rounded-xl">
-                <img alt="Restaurant" class="w-full h-full object-cover" data-alt="A gourmet dining setting in a luxury hotel restaurant. Pristine white tablecloths are set with crystal glasses and polished silver cutlery. The background is a blurred view of a lush interior garden with warm spotlighting on the plants. The overall mood is intimate, exclusive, and representative of fine dining excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLfc_uUNfMieyJmU7KgP0HLuLsF3_VhqHve1IQyBaUxn8eYjiOvxXpTv5_tHUEjcSxtPWpsVG-eQKlDfkIzWBh1Uzt7q0S4mVVRDnzUYRLIMFkgHC1Vn0tfJON9EBqF2wb-39q2z-ykYSFfhzH-jWl54QzgXfuvLT06hBZQu9BCnb3WuKQ2wUGFPAS7KZS3usCltfuZPf2eQvZz7bVBXR5FbH-HKpSx2L79q1JHkjklCp1VBW3PNBouCnPn8wcKIfOkjadnm0TGh4"/>
+            <div class="relative overflow-hidden rounded-2xl hidden md:block">
+                <img alt="Dining" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLfc_uUNfMieyJmU7KgP0HLuLsF3_VhqHve1IQyBaUxn8eYjiOvxXpTv5_tHUEjcSxtPWpsVG-eQKlDfkIzWBh1Uzt7q0S4mVVRDnzUYRLIMFkgHC1Vn0tfJON9EBqF2wb-39q2z-ykYSFfhzH-jWl54QzgXfuvLT06hBZQu9BCnb3WuKQ2wUGFPAS7KZS3usCltfuZPf2eQvZz7bVBXR5FbH-HKpSx2L79q1JHkjklCp1VBW3PNBouCnPn8wcKIfOkjadnm0TGh4"/>
             </div>
-            <div class="relative overflow-hidden rounded-xl">
-                <img alt="Spa Area" class="w-full h-full object-cover" data-alt="A luxurious spa treatment room with soft, indirect lighting and walls made of natural stone. There are stacks of fluffy white towels and subtle aromatherapy candles flickering. The design is ultra-modern and minimalist, emphasizing tranquility and wellness. A calm, deep blue color palette dominates the shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMUFYB1sY1ZWve0bFnt25fe6CQ-V11kH14n9tSPVAw9g1-45ul18AVQGPRG8HlZnVoxVkmSi4triIlhFrS-lMvlDW8LpOiJz63gXOpYCM9h4TlNctBEBgq5SxRUTmK3tqzCCmqNl2I7fzslpoc67YtgD420vRqiUd5yaqj3zA88Oz1t1aECJs5pr-UnAq5D5sGmpEiw_n6bM6xYmPSBNTaRlh8Nu4v8uLpTaU8BC80BcjpCn1N-wHHUpjSv-9X2AMLoOgnvBlWV0"/>
+            <div class="relative overflow-hidden rounded-2xl hidden md:block">
+                <img alt="Spa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMUFYB1sY1ZWve0bFnt25fe6CQ-V11kH14n9tSPVAw9g1-45ul18AVQGPRG8HlZnVoxVkmSi4triIlhFrS-lMvlDW8LpOiJz63gXOpYCM9h4TlNctBEBgq5SxRUTmK3tqzCCmqNl2I7fzslpoc67YtgD420vRqiUd5yaqj3zA88Oz1t1aECJs5pr-UnAq5D5sGmpEiw_n6bM6xYmPSBNTaRlh8Nu4v8uLpTaU8BC80BcjpCn1N-wHHUpjSv-9X2AMLoOgnvBlWV0"/>
             </div>
+            <button class="absolute bottom-6 right-6 bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm shadow-xl flex items-center gap-2 hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-base">grid_view</span>
+                Tüm Fotoğrafları Gör
+            </button>
         </div>
     </section>
-    <!-- Main Content (2 Columns) -->
-    <section class="max-w-7xl mx-auto px-8 mb-xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <!-- Main Content -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
         <!-- LEFT: Information -->
-        <div class="lg:col-span-2 space-y-lg">
+        <div class="lg:col-span-2 space-y-12">
             <div>
-                <h2 class="font-headline-md text-primary mb-md">Hakkında</h2>
-                <p class="text-body-lg text-on-surface-variant leading-relaxed">
+                <h2 class="text-2xl font-bold mb-4">Otel Hakkında</h2>
+                <p class="text-on-surface-variant leading-relaxed mb-8">
                     The Royal Horizon Resort, Milano'nun kalbinde zarafet ve modern konforun eşsiz bir birleşimini sunuyor. Tarihi dokusu korunarak restore edilmiş bu mimari şaheser, misafirlerine sadece bir konaklama değil, unutulmaz bir İtalyan rüyası vadediyor. Panoramik şehir manzaralı süitlerimizden, dünya standartlarındaki spa merkezimize kadar her detay titizlikle tasarlandı.
                 </p>
-                <p class="text-body-md text-on-surface-variant mt-4 leading-relaxed">
-                    Milano'nun moda bölgesine yürüme mesafesinde bulunan otelimiz, Michelin yıldızlı restoranı ve özel şoför hizmetiyle lüksü yeniden tanımlıyor.
-                </p>
-            </div>
-            <div class="border-t border-outline-variant pt-lg">
-                <h3 class="font-headline-md text-primary mb-md">Popüler Olanaklar</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">wifi</span>
-                        <span class="text-body-md">Ücretsiz Yüksek Hızlı WiFi</span>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white premium-shadow p-4 rounded-2xl flex flex-col items-center text-center gap-2 border border-outline/50">
+                        <span class="material-symbols-outlined text-secondary">wifi</span>
+                        <span class="text-xs font-semibold">Ücretsiz WiFi</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">pool</span>
-                        <span class="text-body-md">Isıtmalı Açık Havuz</span>
+                    <div class="bg-white premium-shadow p-4 rounded-2xl flex flex-col items-center text-center gap-2 border border-outline/50">
+                        <span class="material-symbols-outlined text-secondary">pool</span>
+                        <span class="text-xs font-semibold">Yüzme Havuzu</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">local_parking</span>
-                        <span class="text-body-md">Vale Otopark</span>
+                    <div class="bg-white premium-shadow p-4 rounded-2xl flex flex-col items-center text-center gap-2 border border-outline/50">
+                        <span class="material-symbols-outlined text-secondary">restaurant</span>
+                        <span class="text-xs font-semibold">Restoran</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">ac_unit</span>
-                        <span class="text-body-md">Merkezi Klima</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">restaurant</span>
-                        <span class="text-body-md">Açık Büfe Kahvaltı</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary-container">spa</span>
-                        <span class="text-body-md">Lüks Spa &amp; Wellness</span>
+                    <div class="bg-white premium-shadow p-4 rounded-2xl flex flex-col items-center text-center gap-2 border border-outline/50">
+                        <span class="material-symbols-outlined text-secondary">spa</span>
+                        <span class="text-xs font-semibold">Spa &amp; Wellness</span>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-outline-variant pt-lg">
-                <h3 class="font-headline-md text-primary mb-md">Oda Seçenekleri</h3>
-                <div class="space-y-4">
-                    <!-- Room Card -->
-                    <div class="glass-panel p-md rounded-xl flex flex-col md:flex-row gap-6 border border-outline-variant/30">
-                        <div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
-                            <img alt="Room" class="w-full h-full object-cover" data-alt="A deluxe double room with a contemporary minimalist layout. Featuring a large king-sized bed with crisp white linens, a designer chair in the corner, and soft evening sunlight filtering through sheer curtains. The room is decorated in neutral tones of beige and charcoal gray." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzrsHcdUT90MtBOtXzhr7zgoC6vwrApZ-PCpQa7tbFV8wUNALIqfDX-hQGACXIqlPV4LMIFP9yHnBwAjt25EmSrJt9ppI5_2VJJXPUIpxyOnnJsK7v0PnlKtbx2Guv0HJ3HlGjRj6AOgDftRAunACf5HUwLRZxCq5rZP8bUMD1lF0QbHv-Zuisnp19IzguhDSvahUW8Z89nawGEHGA5ImLmgYYo23gYQeFAdhcf8uDBFwp5BzgUkNXQturAubXnBrRPXLH4ZHNcow"/>
+            <!-- Room Info Section -->
+            <div class="pt-4">
+                <h3 class="text-2xl font-bold mb-6">Mevcut Odalar</h3>
+                <div class="space-y-6">
+                    <div class="premium-shadow bg-white rounded-2xl overflow-hidden border border-outline flex flex-col md:flex-row transition-all hover:border-secondary/20">
+                        <div class="md:w-64 h-48 md:h-auto overflow-hidden">
+                            <img alt="Deluxe Room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzrsHcdUT90MtBOtXzhr7zgoC6vwrApZ-PCpQa7tbFV8wUNALIqfDX-hQGACXIqlPV4LMIFP9yHnBwAjt25EmSrJt9ppI5_2VJJXPUIpxyOnnJsK7v0PnlKtbx2Guv0HJ3HlGjRj6AOgDftRAunACf5HUwLRZxCq5rZP8bUMD1lF0QbHv-Zuisnp19IzguhDSvahUW8Z89nawGEHGA5ImLmgYYo23gYQeFAdhcf8uDBFwp5BzgUkNXQturAubXnBrRPXLH4ZHNcow"/>
                         </div>
-                        <div class="flex-grow">
-                            <h4 class="font-headline-md text-lg mb-2">Deluxe Şehir Manzaralı Oda</h4>
-                            <ul class="text-body-sm text-on-surface-variant grid grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">square_foot</span> 45 m²</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">king_bed</span> King Boy Yatak</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">person</span> 2 Yetişkin</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">visibility</span> Şehir Manzarası</li>
-                            </ul>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-xl font-bold">Deluxe City View Room</h4>
+                                    <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded uppercase">Ücretsiz İptal</span>
+                                </div>
+                                <div class="flex flex-wrap gap-4 text-xs text-on-surface-variant mb-4">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">square_foot</span> 45 m²</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">group</span> Maks. 2 Kişi</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">restaurant</span> Kahvaltı Dahil</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div class="text-xs text-on-surface-variant">
+                                    <p>Giriş: 12 May 2024</p>
+                                    <p>Çıkış: 15 May 2024</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xl font-bold">€850</div>
+                                    <button class="text-secondary text-sm font-bold mt-1 hover:underline">Odayı Seç</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Facilities -->
+            <div class="pt-4">
+                <h3 class="text-2xl font-bold mb-6">Tesis Olanakları</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-on-surface-variant text-sm">
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> 24 Saat Açık Resepsiyon</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> Concierge Hizmeti</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> Oda Servisi</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> Spor Salonu</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> Havalimanı Transferi (Ücretli)</div>
+                    <div class="flex items-center gap-3"><span class="material-symbols-outlined text-green-600">check_circle</span> Emanet Kasası</div>
+                </div>
+            </div>
+            <!-- Important Info -->
+            <div class="pt-4">
+                <h3 class="text-2xl font-bold mb-6">Önemli Bilgiler</h3>
+                <ul class="space-y-3 text-sm text-on-surface-variant list-disc pl-5">
+                    <li>Giriş saati: 14:00'den itibaren.</li>
+                    <li>Çıkış saati: 12:00'ye kadar.</li>
+                    <li>Evcil hayvan kabul edilmemektedir.</li>
+                    <li>Şehir vergisi otele varışta nakit veya kredi kartı ile tahsil edilir.</li>
+                    <li>Ek yatak talepleri müsaitlik durumuna göre karşılanır.</li>
+                </ul>
             </div>
         </div>
-        <!-- RIGHT: Booking Card -->
+        <!-- RIGHT: Booking Card (Sticky Price Card) -->
         <div class="lg:col-span-1">
-            <div class="sticky top-28 glass-panel p-8 rounded-2xl border border-outline-variant/20">
-                <div class="flex items-baseline gap-2 mb-6">
-                    <span class="text-3xl font-bold text-primary">€850</span>
-                    <span class="text-on-surface-variant">/ gece</span>
-                </div>
-                <div class="space-y-4 mb-6">
-                    <div class="grid grid-cols-2 border border-outline-variant rounded-lg overflow-hidden">
-                        <div class="p-3 border-r border-outline-variant">
-                            <label class="block font-label-bold text-[10px] text-outline uppercase mb-1">Giriş</label>
-                            <div class="text-body-sm font-semibold">12 May 2024</div>
-                        </div>
-                        <div class="p-3">
-                            <label class="block font-label-bold text-[10px] text-outline uppercase mb-1">Çıkış</label>
-                            <div class="text-body-sm font-semibold">15 May 2024</div>
-                        </div>
+            <div class="sticky top-28 premium-shadow bg-white p-8 rounded-2xl border border-outline space-y-6">
+                <div class="pb-6 border-b border-outline">
+                    <div class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider mb-2">Seçili Oda İçin Fiyat</div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-4xl font-bold text-primary">€2,550</span>
+                        <span class="text-on-surface-variant text-sm">/ 3 gece</span>
                     </div>
-                    <div class="border border-outline-variant rounded-lg p-3">
-                        <label class="block font-label-bold text-[10px] text-outline uppercase mb-1">Konuklar</label>
-                        <div class="text-body-sm font-semibold">2 Yetişkin, 1 Oda</div>
+                    <div class="text-xs text-on-surface-variant mt-2">
+                        Vergiler ve harçlar dahil toplam: <span class="font-bold text-primary">€2,670</span>
                     </div>
                 </div>
-                <button class="w-full bg-secondary-container text-on-secondary-container font-label-bold py-4 rounded-lg shadow-md hover:bg-secondary transition-all mb-4">
-                    Hemen Rezerve Et
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="p-3 bg-surface-container rounded-2xl">
+                            <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Giriş</label>
+                            <div class="text-sm font-bold">12 May 2024</div>
+                        </div>
+                        <div class="p-3 bg-surface-container rounded-2xl">
+                            <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Çıkış</label>
+                            <div class="text-sm font-bold">15 May 2024</div>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-surface-container rounded-2xl">
+                        <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Konuklar</label>
+                        <div class="text-sm font-bold">2 Yetişkin, 1 Oda</div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-xs text-green-700 font-medium">
+                        <span class="material-symbols-outlined text-sm">check_circle</span>
+                        Ücretsiz İptal (10 Mayıs'a kadar)
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-primary font-medium">
+                        <span class="material-symbols-outlined text-sm">bolt</span>
+                        Anında Onay
+                    </div>
+                </div>
+                <button class="w-full bg-secondary text-white font-bold py-4 rounded-2xl shadow-lg hover:opacity-90 transition-all text-center">
+                    Şimdi Rezervasyon Yap
                 </button>
-                <p class="text-center text-body-sm text-outline mb-6">Henüz bir ücret tahsil edilmeyecek</p>
-                <div class="space-y-3 border-t border-outline-variant pt-6">
-                    <div class="flex justify-between text-body-md">
-                        <span>€850 x 3 gece</span>
-                        <span>€2,550</span>
-                    </div>
-                    <div class="flex justify-between text-body-md">
-                        <span>Hizmet Bedeli</span>
-                        <span>€120</span>
-                    </div>
-                    <div class="flex justify-between font-bold text-lg pt-2 border-t border-outline-variant">
-                        <span>Toplam</span>
-                        <span>€2,670</span>
-                    </div>
-                </div>
+                <p class="text-center text-[10px] text-on-surface-variant">Güvenli ödeme altyapısı ile rezervasyonunuz koruma altındadır.</p>
             </div>
         </div>
     </section>
     <!-- Map Section -->
-    <section class="max-w-7xl mx-auto px-8 mb-xl">
-        <h3 class="font-headline-md text-primary mb-md">Konum</h3>
-        <div class="w-full h-96 rounded-2xl overflow-hidden shadow-inner bg-surface-container-highest relative">
-            <img alt="Map" class="w-full h-full object-cover opacity-50 grayscale" data-alt="A stylized minimalist map of central Milan, Italy, showing the area around the Duomo. The map uses a sophisticated monochromatic color palette of slate grays and whites, with clear street layouts and a single gold pin marking the hotel's premium location. The design is clean, professional, and functional for high-end travel software." data-location="Milano, Italy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtmlyER3r8xz6ZQ2T4mDAF3KHtIO2B9DWA9HbMk_3q-2EP3NPPEy1LlApGKOsT17NxsEAGrgQ7_j-gGjqjYYvzgLf4DndoMPlA680FcjXia1iDph7Z0IUV3XSQRUDMHfQQyeRGm9Z-Er106YVLWy-OEgeZmulxUh9e9CZ8_Gygh0MrzCeHQMKVdDs4rk_xFhZKHk5njYWIuiHg87BrK1Cw8xM6QWecWA-281RPfXkzoQubExiuvPVI0e1tG6v7b1c_UB_sv9TwNe8"/>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="bg-primary text-on-primary px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 mt-xl">
+        <h3 class="text-2xl font-bold mb-6">Konum</h3>
+        <div class="w-full h-[400px] rounded-2xl overflow-hidden shadow-inner bg-slate-200 relative">
+            <img alt="Map" class="w-full h-full object-cover opacity-50 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtmlyER3r8xz6ZQ2T4mDAF3KHtIO2B9DWA9HbMk_3q-2EP3NPPEy1LlApGKOsT17NxsEAGrgQ7_j-gGjqjYYvzgLf4DndoMPlA680FcjXia1iDph7Z0IUV3XSQRUDMHfQQyeRGm9Z-Er106YVLWy-OEgeZmulxUh9e9CZ8_Gygh0MrzCeHQMKVdDs4rk_xFhZKHk5njYWIuiHg87BrK1Cw8xM6QWecWA-281RPfXkzoQubExiuvPVI0e1tG6v7b1c_UB_sv9TwNe8"/>
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl mb-4">
                     <span class="material-symbols-outlined">location_on</span>
-                    <span class="font-label-bold">Haritada Gör</span>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- Reviews Section -->
-    <section class="max-w-7xl mx-auto px-8 mb-xl">
-        <div class="flex items-center justify-between mb-lg">
-            <h3 class="font-headline-md text-primary">Misafir Değerlendirmeleri</h3>
-            <button class="text-primary font-label-bold flex items-center gap-2">
-                Tümünü Gör <span class="material-symbols-outlined">chevron_right</span>
-            </button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Review 1 -->
-            <div class="glass-panel p-8 rounded-2xl">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">AK</div>
-                    <div>
-                        <div class="font-bold">Ahmet K.</div>
-                        <div class="text-body-sm text-outline">Nisan 2024</div>
-                    </div>
-                    <div class="ml-auto bg-secondary-container/20 text-secondary px-2 py-1 rounded font-bold">10/10</div>
+                <div class="bg-white premium-shadow p-6 rounded-2xl max-w-sm border border-outline/30">
+                    <h4 class="font-bold mb-2">The Royal Horizon Resort</h4>
+                    <p class="text-xs text-on-surface-variant mb-4">Milano, İtalya — Duomo Meydanı'na 500m mesafede</p>
+                    <button class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold hover:opacity-90">Haritada Görüntüle</button>
                 </div>
-                <p class="text-body-md text-on-surface-variant italic">"İnanılmaz bir deneyimdi. Personelin ilgisi ve otelin konumu kusursuz. Kahvaltısı ise hayatımda gördüğüm en iyisiydi."</p>
-            </div>
-            <!-- Review 2 -->
-            <div class="glass-panel p-8 rounded-2xl">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">SD</div>
-                    <div>
-                        <div class="font-bold">Selma D.</div>
-                        <div class="text-body-sm text-outline">Mart 2024</div>
-                    </div>
-                    <div class="ml-auto bg-secondary-container/20 text-secondary px-2 py-1 rounded font-bold">9.5/10</div>
-                </div>
-                <p class="text-body-md text-on-surface-variant italic">"Şehrin gürültüsünden uzak ama her yere çok yakın. Spa hizmetleri kesinlikle denenmeli. Tasarım harikası bir otel."</p>
-            </div>
-            <!-- Review 3 -->
-            <div class="glass-panel p-8 rounded-2xl">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">MY</div>
-                    <div>
-                        <div class="font-bold">Murat Y.</div>
-                        <div class="text-body-sm text-outline">Şubat 2024</div>
-                    </div>
-                    <div class="ml-auto bg-secondary-container/20 text-secondary px-2 py-1 rounded font-bold">9.0/10</div>
-                </div>
-                <p class="text-body-md text-on-surface-variant italic">"Modern mimari ile klasik lüksün birleşimi. Odamızın manzarası büyüleyiciydi. Tekrar geleceğim."</p>
-            </div>
-            <!-- Review 4 -->
-            <div class="glass-panel p-8 rounded-2xl">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">EB</div>
-                    <div>
-                        <div class="font-bold">Elif B.</div>
-                        <div class="text-body-sm text-outline">Ocak 2024</div>
-                    </div>
-                    <div class="ml-auto bg-secondary-container/20 text-secondary px-2 py-1 rounded font-bold">9.8/10</div>
-                </div>
-                <p class="text-body-md text-on-surface-variant italic">"Konukseverlik üst düzeyde. Küçük ikramlar ve detaylara verilen önem bizi çok etkiledi. Milano'nun en iyisi."</p>
             </div>
         </div>
     </section>
     <!-- Similar Hotels -->
-    <section class="max-w-7xl mx-auto px-8 mb-xl">
-        <h3 class="font-headline-md text-primary mb-lg">Benzer Oteller</h3>
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 mt-xl">
+        <h3 class="text-2xl font-bold mb-8">Benzer Oteller</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Hotel Card 1 -->
             <div class="group cursor-pointer">
-                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4">
-                    <img alt="Similar Hotel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sophisticated boutique hotel facade in Milan at dusk. The building is illuminated by soft, warm architectural lighting that highlights its intricate stonework and grand windows. The sky is a deep indigo, providing a high-contrast background. The overall aesthetic is one of exclusive, quiet luxury and historical charm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-YhL1ZtqzMlf1kYkXvFxWeNN3shgHyGDb9zk5wWCNSNP2PjdQu6MWQ3M3Q-lqcwiCb1EIV8dFYHyXWgGPhbZ_cS_krZzwdpcuuS3IRBtnxeAJwZJ2HU2F8X9O8j4A1DE_KI3ShZy3Nd9hOrsYBHmPeN9evdRbMquzUouqMEz0n2dw39mYiu6GRxelAhQS29wuoZ9GEiz04-4zJLBgDH_dzpMU0xhla3iUvh5mmekkjjx6o6vZ2ny3pHTFmPnu4HysFiWdoi3sPgw"/>
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-body-sm font-bold">
-                        9.4
-                    </div>
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 premium-shadow">
+                    <img alt="Similar 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-YhL1ZtqzMlf1kYkXvFxWeNN3shgHyGDb9zk5wWCNSNP2PjdQu6MWQ3M3Q-lqcwiCb1EIV8dFYHyXWgGPhbZ_cS_krZzwdpcuuS3IRBtnxeAJwZJ2HU2F8X9O8j4A1DE_KI3ShZy3Nd9hOrsYBHmPeN9evdRbMquzUouqMEz0n2dw39mYiu6GRxelAhQS29wuoZ9GEiz04-4zJLBgDH_dzpMU0xhla3iUvh5mmekkjjx6o6vZ2ny3pHTFmPnu4HysFiWdoi3sPgw"/>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded font-bold text-[10px] shadow-sm">9.4</div>
                 </div>
-                <h4 class="font-headline-md text-lg">Palazzo Magnani Feroni</h4>
-                <p class="text-body-sm text-outline">Floransa, İtalya</p>
-                <div class="mt-2 font-bold">€720 <span class="font-normal text-outline">/ gece</span></div>
+                <h4 class="font-bold text-sm">Palazzo Magnani Feroni</h4>
+                <p class="text-[10px] text-on-surface-variant mb-2">Floransa, İtalya</p>
+                <div class="text-sm font-bold">€720 <span class="font-normal text-on-surface-variant text-[10px]">/ gece</span></div>
             </div>
-            <!-- Hotel Card 2 -->
             <div class="group cursor-pointer">
-                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4">
-                    <img alt="Similar Hotel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sun-drenched luxury villa exterior with a focus on a white terrace and bright blue swimming pool. The scene is set in Tuscany, with rolling hills visible in the hazy distance. The lighting is high-key and summery, emphasizing a clean, modern Mediterranean luxury aesthetic. The composition is open and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-vXxXeWkEgHLx1dBHZl-zHiGE1LJ5tkYJJn8cPNEZCXiY1CzXi5YtIEYWgOwdEZ0UZSVhgEZ6rJx480mAF0pE7uX8LJQNmkDBo_zCgEQu0K2iaa5FvODCQlQh4WSj31nqV4GIKTRuXgQOZ9AWFNaiXiAv-MBUD-CKzKPXfwxISBJBunZFfdIBpta2PlPrRsqgmLdrimNDtJyj5raE9Vl7PS3uPBv_-uXQfUDaRBwqPluxvOq1HDzTABWmNT058cJ0myNfj6zO7BI"/>
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-body-sm font-bold">
-                        9.2
-                    </div>
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 premium-shadow">
+                    <img alt="Similar 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-vXxXeWkEgHLx1dBHZl-zHiGE1LJ5tkYJJn8cPNEZCXiY1CzXi5YtIEYWgOwdEZ0UZSVhgEZ6rJx480mAF0pE7uX8LJQNmkDBo_zCgEQu0K2iaa5FvODCQlQh4WSj31nqV4GIKTRuXgQOZ9AWFNaiXiAv-MBUD-CKzKPXfwxISBJBunZFfdIBpta2PlPrRsqgmLdrimNDtJyj5raE9Vl7PS3uPBv_-uXQfUDaRBwqPluxvOq1HDzTABWmNT058cJ0myNfj6zO7BI"/>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded font-bold text-[10px] shadow-sm">9.2</div>
                 </div>
-                <h4 class="font-headline-md text-lg">Villa Cora</h4>
-                <p class="text-body-sm text-outline">Roma, İtalya</p>
-                <div class="mt-2 font-bold">€680 <span class="font-normal text-outline">/ gece</span></div>
+                <h4 class="font-bold text-sm">Villa Cora</h4>
+                <p class="text-[10px] text-on-surface-variant mb-2">Roma, İtalya</p>
+                <div class="text-sm font-bold">€680 <span class="font-normal text-on-surface-variant text-[10px]">/ gece</span></div>
             </div>
-            <!-- Hotel Card 3 -->
             <div class="group cursor-pointer">
-                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4">
-                    <img alt="Similar Hotel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern luxury hotel infinity pool blending into the horizon of the Mediterranean sea. The sky is clear blue, and the sunlight creates sparkling diamond patterns on the water surface. The setting is minimalist with white stone decks and sleek, designer lounge chairs. It conveys a feeling of high-end coastal tranquility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADVU6meu19lBGdHf7DSmp4unbHfqybF_0w1_u4we9VEmaUIAtB0KQOxOskAwBqCqM35_3fLk5iEgZEvTkxX8AhJ8QrlEZWutU8gLozllYKhDNC_6VhblsSb1TnL8BrMvG5hXDqT54tdhQ_4gyKDqVIPQ7AYzYz7SA-MGJBVRy__S9WN77poA4M2ppXx6e6HX7VgK5Y7ZHBGk1pd9KyluvJ5STUnBMBz2bqZyvykoaR8_RqeYekCwAt9F4ZnUs1a4M-GAtnBQquYZM"/>
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-body-sm font-bold">
-                        9.7
-                    </div>
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 premium-shadow">
+                    <img alt="Similar 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADVU6meu19lBGdHf7DSmp4unbHfqybF_0w1_u4we9VEmaUIAtB0KQOxOskAwBqCqM35_3fLk5iEgZEvTkxX8AhJ8QrlEZWutU8gLozllYKhDNC_6VhblsSb1TnL8BrMvG5hXDqT54tdhQ_4gyKDqVIPQ7AYzYz7SA-MGJBVRy__S9WN77poA4M2ppXx6e6HX7VgK5Y7ZHBGk1pd9KyluvJ5STUnBMBz2bqZyvykoaR8_RqeYekCwAt9F4ZnUs1a4M-GAtnBQquYZM"/>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded font-bold text-[10px] shadow-sm">9.7</div>
                 </div>
-                <h4 class="font-headline-md text-lg">Belmond Hotel Caruso</h4>
-                <p class="text-body-sm text-outline">Ravello, İtalya</p>
-                <div class="mt-2 font-bold">€950 <span class="font-normal text-outline">/ gece</span></div>
+                <h4 class="font-bold text-sm">Belmond Hotel Caruso</h4>
+                <p class="text-[10px] text-on-surface-variant mb-2">Ravello, İtalya</p>
+                <div class="text-sm font-bold">€950 <span class="font-normal text-on-surface-variant text-[10px]">/ gece</span></div>
             </div>
-            <!-- Hotel Card 4 -->
             <div class="group cursor-pointer">
-                <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4">
-                    <img alt="Similar Hotel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A grand luxury hotel lobby with high ceilings, crystal chandeliers, and a polished marble floor reflecting the light. The furniture is a mix of classic antique styles and sleek modern Italian pieces. The color palette is cream, gold, and deep navy. The atmosphere is majestic, imposing, and ultra-premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeW9bx3maFaSDDY1P1eQx6lpzrngaOAmltaT2waMpJ5tL4Q4Dw6QAYjWtmJVP2uHuiTuBpTmPGDVCNinQIPeps6wHWEaLEtV0Qtj3zyqs-BkRGD6jBMM4z_joG_fUjDh4V448IZWPB3c57NK2RuDS-IrgK1TZe01TaItgQHNx_U5HNcyHX8QOYQB-Pnghzrm7sJCbaZXxAMUxNuUR5c6H-qBs5FedPRZ1KL1jxis6F1_oQflWZeSnWQ3ncMVV4lUbFjz0yTlo4lM"/>
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-body-sm font-bold">
-                        9.5
-                    </div>
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 premium-shadow">
+                    <img alt="Similar 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeW9bx3maFaSDDY1P1eQx6lpzrngaOAmltaT2waMpJ5tL4Q4Dw6QAYjWtmJVP2uHuiTuBpTmPGDVCNinQIPeps6wHWEaLEtV0Qtj3zyqs-BkRGD6jBMM4z_joG_fUjDh4V448IZWPB3c57NK2RuDS-IrgK1TZe01TaItgQHNx_U5HNcyHX8QOYQB-Pnghzrm7sJCbaZXxAMUxNuUR5c6H-qBs5FedPRZ1KL1jxis6F1_oQflWZeSnWQ3ncMVV4lUbFjz0yTlo4lM"/>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded font-bold text-[10px] shadow-sm">9.5</div>
                 </div>
-                <h4 class="font-headline-md text-lg">Hotel Principe di Savoia</h4>
-                <p class="text-body-sm text-outline">Milano, İtalya</p>
-                <div class="mt-2 font-bold">€890 <span class="font-normal text-outline">/ gece</span></div>
+                <h4 class="font-bold text-sm">Hotel Principe di Savoia</h4>
+                <p class="text-[10px] text-on-surface-variant mb-2">Milano, İtalya</p>
+                <div class="text-sm font-bold">€890 <span class="font-normal text-on-surface-variant text-[10px]">/ gece</span></div>
             </div>
         </div>
     </section>
 </main>
-<!-- Footer (Shared Component) -->
-<footer class="bg-slate-950 dark:bg-black w-full pt-16 pb-8 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-4">
-            <div class="text-xl font-bold text-amber-500">StayFinder</div>
-            <div class="flex flex-wrap gap-x-6 gap-y-2 font-noto-serif text-sm text-slate-400">
-                <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
-                <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
-                <a class="hover:text-white transition-colors" href="#">Travel Insurance</a>
-                <a class="hover:text-white transition-colors" href="#">Sitemap</a>
-                <a class="hover:text-white transition-colors" href="#">Affiliate Program</a>
+<!-- Footer (Dark Navy Unified Style) -->
+<footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-1">
+                <div class="text-2xl font-bold tracking-tight mb-6 flex items-center gap-2">
+                    <span class="bg-white text-primary p-1 rounded">Tx</span>
+                    <span>Travix</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">Dünyanın en seçkin otellerini en avantajlı fiyatlarla keşfedin. Travix ile lüks seyahat artık daha erişilebilir.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Şirket</h5>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><a class="hover:text-secondary transition-colors" href="#">Hakkımızda</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Kariyer</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Blog</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Basın</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Destek</h5>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><a class="hover:text-secondary transition-colors" href="#">Yardım Merkezi</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Güvenli Ödeme</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">İptal Koşulları</a></li>
+                    <li><a class="hover:text-secondary transition-colors" href="#">Bize Ulaşın</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Bültene Katılın</h5>
+                <p class="text-sm text-slate-400 mb-4">En özel tekliflerden ilk siz haberdar olun.</p>
+                <div class="flex gap-2">
+                    <input class="bg-slate-800 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-1 focus:ring-secondary" placeholder="E-posta adresiniz" type="email"/>
+                    <button class="bg-secondary text-white px-4 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-all">Katıl</button>
+                </div>
             </div>
         </div>
-        <div class="md:text-right">
-            <p class="font-noto-serif text-sm text-slate-400">© 2024 StayFinder Luxury Travel. All rights reserved.</p>
+        <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <p>© 2024 Travix Travel Technologies. Tüm hakları saklıdır.</p>
+            <div class="flex gap-6">
+                <a class="hover:text-white" href="#">Gizlilik Politikası</a>
+                <a class="hover:text-white" href="#">Kullanım Şartları</a>
+                <a class="hover:text-white" href="#">KVKK Aydınlatma Metni</a>
+            </div>
         </div>
     </div>
 </footer>

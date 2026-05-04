@@ -85,9 +85,6 @@
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/89r584kld4-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/q31pvo3u2y-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/jbmt7aufeo-{0}-jfsiqqwiad-jfsiqqwiad.gz
-/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/4odc0hjmw9-{0}-bujqjngcc3-bujqjngcc3.gz
-/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/8dok8rkt1l-{0}-12305ds0kk-12305ds0kk.gz
-/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/9tu680tt7k-{0}-4qtxcrwwiu-4qtxcrwwiu.gz
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/99dhkcy4u0-{0}-n6yx6vg9cd-n6yx6vg9cd.gz
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/tgrf7z2ukj-{0}-n6yx6vg9cd-n6yx6vg9cd.gz
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/staticwebassets.build.json
@@ -103,3 +100,6 @@
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/ref/Travix.dll
 /Users/furkanturker/RiderProjects/Travix/Travix/bin/Debug/net10.0/AutoMapper.dll
 /Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/Travix.sourcelink.json
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/4odc0hjmw9-{0}-381jeuz2m4-381jeuz2m4.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/8dok8rkt1l-{0}-v4zoatlvgk-v4zoatlvgk.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/9tu680tt7k-{0}-5nfvaax3c1-5nfvaax3c1.gz
