@@ -160,57 +160,8 @@
     </div>
 </section>
 
-<section class="py-lg max-w-7xl mx-auto px-8">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter">
-        <div class="bg-white p-6 rounded-card hotel-card-shadow flex flex-col justify-between border border-slate-100">
-            <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-secondary-container text-3xl">wb_sunny</span>
-                <span class="text-xs font-bold text-slate-400">HAVA DURUMU</span>
-            </div>
-            <div>
-                <h3 class="text-headline-md font-headline-md mt-4">24°C</h3>
-                <p class="text-body-sm text-slate-600">Antalya, Güneşli</p>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-card hotel-card-shadow flex flex-col justify-between border border-slate-100">
-            <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-green-500 text-3xl">currency_exchange</span>
-                <span class="text-xs font-bold text-slate-400">KUR</span>
-            </div>
-            <div>
-                <h3 class="text-headline-md font-headline-md mt-4">32.40 TL</h3>
-                <p class="text-body-sm text-slate-600">USD/TRY</p>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-card hotel-card-shadow flex flex-col justify-between border border-slate-100">
-            <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-red-400 text-3xl">local_gas_station</span>
-                <span class="text-xs font-bold text-slate-400">YAKIT</span>
-            </div>
-            <div>
-                <h3 class="text-headline-md font-headline-md mt-4">42.15 TL</h3>
-                <p class="text-body-sm text-slate-600">Benzin (Litre)</p>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-card hotel-card-shadow flex flex-col justify-between border border-slate-100">
-            <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-amber-500 text-3xl" style="font-variation-settings: 'FILL' 1;">currency_bitcoin</span>
-                <span class="text-xs font-bold text-slate-400">KRİPTO</span>
-            </div>
-            <div>
-                <h3 class="text-headline-md font-headline-md mt-4">$64,210</h3>
-                <p class="text-body-sm text-slate-600">Bitcoin BTC</p>
-            </div>
-        </div>
-        <div class="bg-slate-900 text-white p-6 rounded-card shadow-xl flex flex-col justify-between">
-            <div class="flex justify-between items-start">
-                <span class="material-symbols-outlined text-secondary-container text-3xl">lightbulb</span>
-                <span class="text-xs font-bold text-slate-400">GÜNÜN TÜYOSU</span>
-            </div>
-            <p class="text-body-sm font-medium mt-4">Vize randevunuzu seyahatten en az 60 gün önce alın.</p>
-        </div>
-    </div>
-</section>
+@await Component.InvokeAsync("_DefaultStatsComponentPartial")
+
 <!-- 4. Popüler Destinasyonlar -->
 <section class="py-xl max-w-7xl mx-auto px-8">
     <div class="flex justify-between items-end mb-lg">
@@ -325,41 +276,73 @@
 <!-- 6. Otel Detay Önizleme -->
 <section class="py-xl max-w-7xl mx-auto px-8">
     <div class="bg-white rounded-[40px] overflow-hidden flex flex-col md:flex-row hotel-card-shadow min-h-[600px] border border-slate-100">
+
+        <!-- SOL GÖRSEL -->
         <div class="md:w-1/2 relative">
-            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMAJUvK5IHZuDUQFx1HkAu0JAHTXp6n61ihA2eq-JgIAv09Vx_4IwS4YMhJz0632UX1IsXwzQfvsOZxTRVKa5NL2R-5JeGOve0FcGJbed-tPfYsTWS2ZPLIZXd7dLND6XJQe4epkkCoAoSUslwMnuF_QwFaBsAHmC2mxVKm8ZTliEPB-vsTuK458GF4AXHYxsrDl8NsQpNCON4V25J_9hu8-z14o2pLndy3RCZjhmqtjSKjq30t1czGOZRukDi19yqHoQZxj9iU0"/>
-            <div class="absolute inset-0 bg-black/20"></div>
+            <img class="w-full h-full object-cover"
+                 src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210c1?q=80&w=1600&auto=format&fit=crop" />
+            <div class="absolute inset-0 bg-black/30"></div>
         </div>
+
+        <!-- SAĞ İÇERİK -->
         <div class="md:w-1/2 p-lg flex flex-col justify-center">
-            <span class="inline-block bg-secondary-fixed text-secondary font-label-bold px-4 py-1 rounded-full text-xs mb-6 w-fit uppercase">AYIN OTELİ</span>
-            <h2 class="text-display-xl font-display-xl text-slate-900 mb-6">The Royal Horizon Resort</h2>
+
+            <span class="inline-block bg-secondary-fixed text-secondary font-label-bold px-4 py-1 rounded-full text-xs mb-6 w-fit uppercase">
+                Hakkımızda
+            </span>
+
+            <h2 class="text-display-xl font-display-xl text-slate-900 mb-6">
+                Travix ile seyahat artık daha akıllı
+            </h2>
+
             <p class="text-body-lg text-slate-600 mb-8 leading-relaxed">
-                Akdeniz'in masmavi sularına bakan bu eşsiz tesiste, lüks ve konforun en üst seviyesini deneyimleyin. Özel plajı, ödüllü restoranları ve dünya standartlarındaki spası ile hayalinizdeki tatili gerçeğe dönüştürün.
+                Travix, dünyanın dört bir yanındaki otelleri tek platformda sunan modern bir seyahat çözümüdür.
+                Amacımız; kullanıcıların en uygun fiyatlı, en yüksek puanlı ve en doğru oteli kolayca bulmasını sağlamaktır.
+                Gelişmiş filtreleme sistemi ve gerçek zamanlı API verileri ile karar sürecinizi hızlandırır.
             </p>
+
+            <!-- ÖZELLİKLER -->
             <div class="grid grid-cols-2 gap-6 mb-10">
+
                 <div class="flex items-center space-x-3">
-                    <span class="material-symbols-outlined text-secondary-container">pool</span>
-                    <span class="text-body-md font-semibold">Özel Sonsuzluk Havuzu</span>
+                    <span class="material-symbols-outlined text-secondary-container">travel_explore</span>
+                    <span class="text-body-md font-semibold">Global Otel Verisi</span>
                 </div>
+
                 <div class="flex items-center space-x-3">
-                    <span class="material-symbols-outlined text-secondary-container">spa</span>
-                    <span class="text-body-md font-semibold">Premium Spa Merkezi</span>
+                    <span class="material-symbols-outlined text-secondary-container">bolt</span>
+                    <span class="text-body-md font-semibold">Hızlı Arama Deneyimi</span>
                 </div>
+
                 <div class="flex items-center space-x-3">
-                    <span class="material-symbols-outlined text-secondary-container">restaurant</span>
-                    <span class="text-body-md font-semibold">Michelin Yıldızlı Mutfak</span>
+                    <span class="material-symbols-outlined text-secondary-container">monitoring</span>
+                    <span class="text-body-md font-semibold">Canlı Fiyat Takibi</span>
                 </div>
+
                 <div class="flex items-center space-x-3">
-                    <span class="material-symbols-outlined text-secondary-container">beach_access</span>
-                    <span class="text-body-md font-semibold">Özel Beyaz Kum Plaj</span>
+                    <span class="material-symbols-outlined text-secondary-container">filter_alt</span>
+                    <span class="text-body-md font-semibold">Akıllı Filtreleme</span>
                 </div>
+
             </div>
+
+            <!-- CTA -->
             <div class="flex items-center space-x-6">
-                <button class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-label-bold hover:scale-105 transition-all shadow-xl">Rezervasyon Yap</button>
+                <a href="/Hotel/List"
+                   class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-label-bold hover:scale-105 transition-all shadow-xl">
+                    Otel Ara
+                </a>
+
                 <div class="text-slate-900">
-                    <span class="block text-xs font-bold text-slate-400 uppercase">BAŞLANGIÇ FİYATI</span>
-                    <span class="text-headline-lg font-headline-lg">18,500 TL</span>
+                    <span class="block text-xs font-bold text-slate-400 uppercase">
+                        PLATFORM
+                    </span>
+                    <span class="text-headline-lg font-headline-lg">
+                        Travix
+                    </span>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
