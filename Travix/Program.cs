@@ -22,9 +22,12 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=SiteSetting}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Default}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 
 app.Run();

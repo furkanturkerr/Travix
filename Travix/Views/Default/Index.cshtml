@@ -217,62 +217,7 @@
     </div>
 </section>
 <!-- 5. Öne Çıkan Oteller -->
-<section class="py-xl bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="text-center mb-lg">
-            <h2 class="text-headline-lg font-headline-lg text-slate-900">Öne Çıkan Oteller</h2>
-            <div class="flex justify-center mt-6 space-x-2">
-                <button class="px-6 py-2 rounded-full bg-slate-900 text-white font-label-bold">Tümü</button>
-                <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-label-bold hover:bg-slate-100 transition-colors border border-slate-200">Popüler</button>
-                <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-label-bold hover:bg-slate-100 transition-colors border border-slate-200">Yeni</button>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-            <script>
-                const hotelData = [
-                    { name: "Grand Palace Hotel", location: "Londra, İngiltere", price: "4,200 TL", rating: "4.9", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Azure Bay Resort", location: "Maldivler", price: "12,500 TL", rating: "5.0", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Mountain View Lodge", location: "Zermatt, İsviçre", price: "6,800 TL", rating: "4.8", img: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&q=80&w=800" },
-                    { name: "The Urban Suite", location: "New York, ABD", price: "5,400 TL", rating: "4.7", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Saffron Sands", location: "Dubai, BAE", price: "9,100 TL", rating: "4.9", img: "https://images.unsplash.com/photo-1596436805366-505963e0094b?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Vintage Opera", location: "Viyana, Avusturya", price: "3,900 TL", rating: "4.6", img: "https://images.unsplash.com/photo-1551882547-ff43c638f614?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Kyoto Serenity", location: "Kyoto, Japonya", price: "7,200 TL", rating: "5.0", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800" },
-                    { name: "Bora Bora Bliss", location: "Polinezya", price: "15,000 TL", rating: "4.9", img: "https://images.unsplash.com/photo-1506929199175-6093399a914a?auto=format&fit=crop&q=80&w=800" }
-                ];
-
-                hotelData.forEach(hotel => {
-                    document.write(`
-                        <div class="bg-white rounded-card overflow-hidden hotel-card-shadow group border border-slate-100 flex flex-col h-full">
-                            <div class="relative h-64 overflow-hidden">
-                                <img src="${hotel.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-sm">
-                                    <span class="material-symbols-outlined text-secondary-container text-sm mr-1" style="font-variation-settings: 'FILL' 1;">star</span>
-                                    ${hotel.rating}
-                                </div>
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-headline-md font-headline-md text-slate-900 mb-1">${hotel.name}</h3>
-                                <div class="flex items-center text-slate-500 text-body-sm mb-4">
-                                    <span class="material-symbols-outlined text-sm mr-1">location_on</span>
-                                    ${hotel.location}
-                                </div>
-                                <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
-                                    <div>
-                                        <span class="text-xs font-bold text-slate-400 block uppercase tracking-tight">GECELİK</span>
-                                        <span class="text-headline-md font-headline-md text-secondary">${hotel.price}</span>
-                                    </div>
-                                    <button class="bg-slate-900 text-white p-3 rounded-xl hover:bg-slate-800 transition-colors">
-                                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `);
-                });
-            </script>
-        </div>
-    </div>
-</section>
+@await Component.InvokeAsync("_DefaultHotelComponentPartial")
 <!-- 6. Otel Detay Önizleme -->
 <section class="py-xl max-w-7xl mx-auto px-8">
     <div class="bg-white rounded-[40px] overflow-hidden flex flex-col md:flex-row hotel-card-shadow min-h-[600px] border border-slate-100">
