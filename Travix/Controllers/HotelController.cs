@@ -32,18 +32,16 @@ public class HotelController : Controller
         );
 
         if (!response.IsSuccessStatusCode)
-            return View("List", new List<Hotel>());
+            return View(new List<Hotel>());
 
         var json = await response.Content.ReadAsStringAsync();
         var jsonData = JsonConvert.DeserializeObject<HotelListDto>(json);
 
         var hotels = jsonData?.data?.hotels ?? new List<Hotel>();
 
-        return View(hotels);
+        return View(hotels); 
     }
 
-    
-    
 
     [HttpPost]
     public async Task<IActionResult> List(string city, string checkIn, string checkOut, int? adults, string? currency, string? language, int? minPrice, int? maxPrice, string? room)

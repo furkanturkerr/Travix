@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec29a",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "primary-fixed": "#dae2fd",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fea619",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-dim": "#dcd9db",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-bright": "#fcf8fa",
+                        "on-surface-variant": "#45464d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "primary-container": "#131b2e",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary": "#855300",
+                        "surface-container-high": "#eae7e9",
+                        "surface-container": "#f0edef",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "inverse-surface": "#303032",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1b1d",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-low": "#f6f3f5",
+                        "tertiary-container": "#271901",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background-color: #fcf8fa;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="fixed h-screen w-64 left-0 top-0 bg-slate-900 dark:bg-black border-r border-slate-800 shadow-2xl flex flex-col py-6 z-50">
+    <div class="px-6 mb-10">
+        <h1 class="text-xl font-bold text-white tracking-tight font-headline-md">StayFinder</h1>
+        <p class="text-xs text-slate-500 font-label-bold uppercase tracking-widest mt-1">Admin Console</p>
+    </div>
+    <nav class="flex-1 space-y-1 px-2">
+        <!-- Dashboard (Inactive) -->
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+            <span class="font-label-bold">Dashboard</span>
+        </a>
+        <!-- Hero (Active) -->
+        <a class="flex items-center gap-3 px-4 py-3 text-orange-500 bg-slate-800/50 border-r-4 border-orange-500 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="font-label-bold">Hero</span>
+        </a>
+        <!-- Travel Panel (Inactive) -->
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+            <span class="font-label-bold">Travel Panel</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="map">map</span>
+            <span class="font-label-bold">Destinations</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+            <span class="font-label-bold">Hotels</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="article">article</span>
+            <span class="font-label-bold">Blog</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+            <span class="font-label-bold">Reviews</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+            <span class="font-label-bold">CTA</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+            <span class="font-label-bold">Reservations</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="group">group</span>
+            <span class="font-label-bold">Users</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="forum">forum</span>
+            <span class="font-label-bold">Messages</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="settings">settings</span>
+            <span class="font-label-bold">Settings</span>
+        </a>
+    </nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+    <!-- TopNavBar Shell -->
+    <header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-slate-100 shadow-sm flex justify-between items-center h-16 px-8">
+        <div class="flex items-center flex-1">
+            <div class="relative w-96 max-w-full">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-orange-500/20" placeholder="Panelde ara..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 border-r border-slate-200 pr-6">
+                <button class="relative text-slate-500 hover:text-orange-600 transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+                </button>
+                <button class="text-slate-500 hover:text-orange-600 transition-colors">
+                    <span class="material-symbols-outlined">help_outline</span>
+                </button>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <p class="text-body-sm font-label-bold text-on-surface">Ahmet Yılmaz</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-tighter">Süper Admin</p>
+                </div>
+                <img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-orange-100 object-cover" data-alt="A professional headshot of a middle-aged male administrator in a modern office setting. He is wearing a crisp white shirt and a navy blazer, projecting an air of confidence and reliability. The background is softly blurred with warm wooden textures and high-end office lighting, maintaining a premium and sophisticated business atmosphere consistent with luxury hospitality management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZoMCh9qVs7uNxg3u6BfzogQfxrrtWYn-8EnRBIcPowbNf3oxgWSdsKyCGxx09tdJ2d7lC2AibL7gW06MfgIWy8NsWQR-bHcIYeuiVowU0qdzLqeFInXnCV-t1QPt0YgfsYEzbrzAbScvKLDDu0uoBkq4obxPAIBcQBs5-2PaTcbEeBfeJZm1fLFyFVf1kDw4se8Ux-43C6zaQ1lZOTLCXFMNrDy-c-E365Meg2eI8-I9kOadnM_Ly9QjZR2osGeGbJc4iUP-NOQ8"/>
+            </div>
+        </div>
+    </header>
+    <!-- Content Canvas -->
+    <div class="p-8 space-y-lg max-w-[1400px] mx-auto">
+        <!-- Header Section -->
+        <div class="flex justify-between items-end">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Hero Yönetimi</h2>
+                <p class="text-body-md text-on-surface-variant mt-2">Ana sayfa karşılama ekranlarını ve kampanya bannerlarını buradan yönetin.</p>
+            </div>
+            <button class="bg-primary-container text-white px-6 py-3 rounded-xl font-label-bold flex items-center gap-2 hover:opacity-90 shadow-lg shadow-primary-container/10 active:scale-95 transition-all">
+                <span class="material-symbols-outlined">add_circle</span>
+                Yeni Hero Ekle
+            </button>
+        </div>
+        <!-- Dashboard Stats Bento (Mini) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+            <div class="glass-panel p-md rounded-xl">
+                <p class="text-body-sm text-on-surface-variant font-label-bold uppercase">Toplam Hero</p>
+                <h3 class="text-headline-lg font-headline-lg text-on-primary-fixed mt-1">12</h3>
+            </div>
+            <div class="glass-panel p-md rounded-xl border-l-4 border-orange-500">
+                <p class="text-body-sm text-on-surface-variant font-label-bold uppercase">Aktif Yayın</p>
+                <h3 class="text-headline-lg font-headline-lg text-on-primary-fixed mt-1">4</h3>
+            </div>
+            <div class="glass-panel p-md rounded-xl">
+                <p class="text-body-sm text-on-surface-variant font-label-bold uppercase">Bekleyenler</p>
+                <h3 class="text-headline-lg font-headline-lg text-on-primary-fixed mt-1">8</h3>
+            </div>
+            <div class="glass-panel p-md rounded-xl">
+                <p class="text-body-sm text-on-surface-variant font-label-bold uppercase">Görüntülenme</p>
+                <h3 class="text-headline-lg font-headline-lg text-on-primary-fixed mt-1">45.2K</h3>
+            </div>
+        </div>
+        <!-- Table Card -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                    <tr class="bg-surface-container-low border-b border-slate-100">
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider">Görsel</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider">Başlık</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider">Alt Başlık</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider">Buton Metni</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider">Durum</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider text-center">Sıra</th>
+                        <th class="px-6 py-4 text-body-sm font-label-bold text-on-surface-variant uppercase tracking-wider text-right">İşlemler</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50">
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-surface-container-lowest transition-colors group">
+                        <td class="px-6 py-4">
+                            <div class="relative w-24 h-14 rounded-lg overflow-hidden shadow-inner border border-slate-100">
+                                <img alt="Hero Görseli" class="w-full h-full object-cover" data-alt="A luxury hotel infinity pool overlooking the Mediterranean ocean at sunset. The sky is painted with vibrant oranges, soft pinks, and deep purples. Modern white lounge chairs line the pool's edge, reflecting a quiet luxury aesthetic. The lighting is warm and golden, creating a serene and inviting atmosphere for a premium travel experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXLSt7Av3aJ9zXgi9cuUbjwS08kq2knTqKNYbxVOkAutcK2qXKggf3khES77vUbNmitRIeEDRrK6QOiXjSe7YAA67Jb7pO-xiCVcb55YNhWE8S-rrAR2eQxhwftjngQ8LMjqi1CL95NRyR3np7VLLTjp6xIxEDxr-TdvgxJelH8zsy5caN8Rw1JdGwm8Q9Vd96UV6VAjKtpUD_Hv8BD5RGC3arCh4TCyG-duBiubh2VQDHH22zWw2zMrK57Y0qns06nranIFRoYqs"/>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="font-label-bold text-on-surface">Yaz Sezonu İndirimleri</p>
+                            <p class="text-[11px] text-slate-400">ID: SF-001</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-body-sm text-on-surface-variant truncate max-w-xs">Ege'nin en güzel koylarında %30 indirim fırsatını kaçırmayın.</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="inline-block px-3 py-1 bg-surface-container text-body-sm rounded-lg border border-slate-100">Hemen Keşfet</span>
+                        </td>
+                        <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                        Aktif
+                                    </span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="font-headline-md text-slate-300">01</span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-orange-500 hover:border-orange-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-error hover:border-error transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-surface-container-lowest transition-colors group">
+                        <td class="px-6 py-4">
+                            <div class="relative w-24 h-14 rounded-lg overflow-hidden shadow-inner border border-slate-100">
+                                <img alt="Hero Görseli" class="w-full h-full object-cover" data-alt="A cozy, high-end mountain cabin nestled in a snowy alpine forest. Warm golden light spills out from large floor-to-ceiling windows, contrasting with the cool blue tones of the winter twilight. The interior shows a crackling fireplace and plush furniture, evoking a sense of ultimate comfort and secluded luxury. The mood is tranquil and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqg3MeVBQfGh3WyabF8laOjGYD0zSJgb3eadXTyTmEm6fRgKeHut8Be3fY_VWXb8tjAz-KCL3yVuc-Mf5g20IrDqukPfEEAneEeB-JMEN79USFmhag9mRvNZpSkxdKSaqWzH0gYdawUl64BAVk9yAT6NZKDx9QoZk1tnYFsfZLi7DIZJydQHV37jXtG7dCX8hpp37yhfyy3xSfAeJUWtpjVvgwpU3z2fV__VkLaT1BJ_j6W25dHrWTenrlps0h_LOLd5XBPWiscEM"/>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="font-label-bold text-on-surface">Kış Kaçamakları</p>
+                            <p class="text-[11px] text-slate-400">ID: SF-002</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-body-sm text-on-surface-variant truncate max-w-xs">Karın tadını en konforlu dağ evlerinde çıkarın.</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="inline-block px-3 py-1 bg-surface-container text-body-sm rounded-lg border border-slate-100">Rezervasyon Yap</span>
+                        </td>
+                        <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-full border border-slate-200">
+<span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
+                                        Pasif
+                                    </span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="font-headline-md text-slate-300">02</span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-orange-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-blue-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-error transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-surface-container-lowest transition-colors group">
+                        <td class="px-6 py-4">
+                            <div class="relative w-24 h-14 rounded-lg overflow-hidden shadow-inner border border-slate-100">
+                                <img alt="Hero Görseli" class="w-full h-full object-cover" data-alt="A sprawling boutique resort architecture set in a lush tropical garden. The design features clean lines, sustainable wood materials, and integrated water features. Soft morning sunlight filters through palm leaves, creating a dappled light effect on the stone pathways. The atmosphere is refreshing and high-end, representing an eco-luxury vacation experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8LoWTaxCTVnqTihkw1bg7r3OAwMBglDy9oSVqmOeNSwVH7u2i6836SDdJgfJYXtPKK6hSOTDsn8NJ5kzdrFkFMe40z93Fm-5nl5_PghTCfQLPuOPC2KdCqk5TMC5i-rwJ-ETjlKH842yRaUUMmhVmfHaEzTn_ak7OiBiovu8wrKen_3IdUaouCNkMY9wDDWktPYWmgzzbUmWIGhkomszGRsp-3JZ4haY_5h_aPXTlheSmsgMaSN5GQDeCfcS_DNSACFQcABKQ3ko"/>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="font-label-bold text-on-surface">Erken Rezervasyon</p>
+                            <p class="text-[11px] text-slate-400">ID: SF-003</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <p class="text-body-sm text-on-surface-variant truncate max-w-xs">2024 yazı için şimdiden yerinizi ayırtın.</p>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="inline-block px-3 py-1 bg-surface-container text-body-sm rounded-lg border border-slate-100">Detayları Gör</span>
+                        </td>
+                        <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                        Aktif
+                                    </span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="font-headline-md text-slate-300">03</span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-orange-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-blue-500 transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                </button>
+                                <button class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-error transition-all">
+                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="px-8 py-4 bg-surface-container-low flex justify-between items-center">
+                <p class="text-body-sm text-on-surface-variant">Toplam 12 kayıttan 1-3 arası gösteriliyor</p>
+                <div class="flex gap-1">
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 text-slate-400 hover:bg-white disabled:opacity-50" disabled="">
+                        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                    </button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded bg-orange-500 text-white font-label-bold">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 text-slate-600 hover:bg-white font-label-bold">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 text-slate-600 hover:bg-white font-label-bold">3</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-slate-200 text-slate-600 hover:bg-white">
+                        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Contextual Help / Tips (Bento Grid Style) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="p-md rounded-xl bg-orange-50 border border-orange-100 flex gap-4">
+                <span class="material-symbols-outlined text-orange-600" style="font-variation-settings: 'FILL' 1;">info</span>
+                <div>
+                    <h4 class="font-label-bold text-orange-900">Görsel Boyutları</h4>
+                    <p class="text-body-sm text-orange-800/80 mt-1">En iyi görünüm için 1920x1080 piksel boyutunda ve optimize edilmiş görseller kullanın.</p>
+                </div>
+            </div>
+            <div class="p-md rounded-xl bg-primary-fixed text-on-primary-fixed border border-primary-fixed-dim flex gap-4">
+                <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                <div>
+                    <h4 class="font-label-bold text-primary-container">Hızlı İpucu</h4>
+                    <p class="text-body-sm text-on-primary-fixed-variant mt-1">Sıralamayı değiştirmek için rakamların üzerine tıklayıp yeni sıra numarasını girebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="p-md rounded-xl bg-white border border-slate-200 flex gap-4">
+                <span class="material-symbols-outlined text-slate-400" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                <div>
+                    <h4 class="font-label-bold text-on-surface">CTA Performansı</h4>
+                    <p class="text-body-sm text-on-surface-variant mt-1">Buton metinlerinde "Keşfet" yerine "Hemen Al" kullanmak %12 daha fazla dönüşüm sağlıyor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body></html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Serif:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec29a",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "primary-fixed": "#dae2fd",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fea619",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-dim": "#dcd9db",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-bright": "#fcf8fa",
+                        "on-surface-variant": "#45464d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "primary-container": "#131b2e",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary": "#855300",
+                        "surface-container-high": "#eae7e9",
+                        "surface-container": "#f0edef",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "inverse-surface": "#303032",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1b1d",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-low": "#f6f3f5",
+                        "tertiary-container": "#271901",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed h-screen w-64 left-0 top-0 bg-slate-900 dark:bg-black border-r border-slate-800 shadow-2xl flex flex-col h-full py-6 z-50">
+    <div class="px-6 mb-8">
+        <h1 class="text-xl font-bold text-white tracking-tight font-headline-md">StayFinder</h1>
+        <p class="text-slate-400 text-xs font-body-sm">Admin Console</p>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-bold">Dashboard</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">star</span>
+            <span class="font-label-bold">Hero</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-orange-500 bg-slate-800/50 border-r-4 border-orange-500 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">map</span>
+            <span class="font-label-bold">Destinations</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">hotel</span>
+            <span class="font-label-bold">Hotels</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">article</span>
+            <span class="font-label-bold">Blog</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-bold">Users</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-bold">Settings</span>
+        </div>
+    </nav>
+    <div class="px-6 mt-auto">
+        <div class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-xl">
+            <img alt="Admin" class="w-10 h-10 rounded-full border-2 border-orange-500" data-alt="A professional close-up studio portrait of a confident male administrator in his 40s. He is wearing a minimalist navy blue blazer over a crisp white shirt, representing a high-end SaaS corporate identity. The background is a soft, out-of-focus modern office with warm orange accent lighting that reflects the StayFinder brand colors. The mood is sophisticated, reliable, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9K1AjfefVcQs1ig37G5JqVxI-dxJTT1gZVjrYmib0_R6ptqYm3hyYJWiPvtr0_FVyQ13Fs7ACpqbDTIA-0C5vgmlwDOfU_hdQYIPl8Nr_psDOLK1Ej-UnHBxj-bT-ImGvpNuaD7hEbfzdXgZXnwwujGjYbTQei33TJbdSeM75tArst8W6SE6fTxJE4euqW378N44A2Hhw1ypc8tIOYMDPTlm9BLRMNPEtw5yUdHfsvpq4HZVBtkTUBGRVUhM-qJvwr_IFdUgqp50"/>
+            <div>
+                <p class="text-white font-label-bold text-xs">Ahmet Yılmaz</p>
+                <p class="text-slate-500 text-[10px]">Süper Admin</p>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+    <!-- Top Bar -->
+    <header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-slate-100 flex justify-between items-center h-16 px-8 shadow-sm">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-400 cursor-pointer">menu</span>
+            <h2 class="text-lg font-black text-slate-900 font-headline-md">Destinasyon Yönetimi</h2>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="relative group">
+                <span class="material-symbols-outlined text-slate-500 hover:text-orange-600 transition-colors cursor-pointer">notifications</span>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-orange-600 rounded-full"></span>
+            </div>
+            <span class="material-symbols-outlined text-slate-500 hover:text-orange-600 transition-colors cursor-pointer">help_outline</span>
+        </div>
+    </header>
+    <!-- Form Content -->
+    <div class="max-w-4xl mx-auto py-lg px-gutter">
+        <div class="mb-lg">
+            <h3 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Destinasyon Ekle / Düzenle</h3>
+            <p class="font-body-md text-on-surface-variant">Platform genelinde görüntülenecek yeni seyahat rotası bilgilerini buradan yönetebilirsiniz.</p>
+        </div>
+        <form class="space-y-md">
+            <!-- Main Info Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                    <div class="space-y-xs">
+                        <label class="font-label-bold text-xs uppercase tracking-wider text-outline">Şehir Adı</label>
+                        <input class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-3 bg-slate-50" placeholder="Örn: Kapadokya" type="text"/>
+                    </div>
+                    <div class="space-y-xs">
+                        <label class="font-label-bold text-xs uppercase tracking-wider text-outline">Ülke</label>
+                        <select class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-3 bg-slate-50">
+                            <option>Türkiye</option>
+                            <option>İtalya</option>
+                            <option>Fransa</option>
+                            <option>Yunanistan</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-xs">
+                        <label class="font-label-bold text-xs uppercase tracking-wider text-outline">Kısa Açıklama</label>
+                        <textarea class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-3 bg-slate-50" placeholder="Gezginler için ilgi çekici bir özet yazın..." rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Media & Layout Card -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <div class="md:col-span-2 bg-white rounded-xl shadow-sm border border-slate-100 p-md">
+                    <label class="font-label-bold text-xs uppercase tracking-wider text-outline mb-md block">Görsel Yükle</label>
+                    <div class="border-2 border-dashed border-slate-200 rounded-xl p-xl flex flex-col items-center justify-center bg-slate-50/50 hover:bg-slate-50 transition-colors cursor-pointer group">
+                        <span class="material-symbols-outlined text-4xl text-slate-300 group-hover:text-orange-500 mb-base">cloud_upload</span>
+                        <p class="font-label-bold text-slate-500">Görseli sürükleyin veya tıklayın</p>
+                        <p class="text-xs text-slate-400 mt-xs">Önerilen boyut: 1920x1080px (Maks. 5MB)</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-md flex flex-col justify-between">
+                    <div>
+                        <label class="font-label-bold text-xs uppercase tracking-wider text-outline mb-md block">Durum ve Sıralama</label>
+                        <div class="space-y-md">
+                            <div class="flex items-center justify-between">
+                                <span class="text-body-sm font-label-bold">Aktif Yayın</span>
+                                <button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-orange-500" type="button">
+                                    <span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+                                </button>
+                            </div>
+                            <div class="space-y-xs">
+                                <label class="font-label-bold text-xs text-outline">Görüntüleme Sırası</label>
+                                <input class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-2 bg-slate-50" type="number" value="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to Action Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-md">
+                <label class="font-label-bold text-xs uppercase tracking-wider text-outline mb-md block">Buton Ayarları (CTA)</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                    <div class="space-y-xs">
+                        <label class="font-label-bold text-xs text-outline">Buton Metni</label>
+                        <input class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-3 bg-slate-50" placeholder="Örn: Şimdi Keşfet" type="text"/>
+                    </div>
+                    <div class="space-y-xs">
+                        <label class="font-label-bold text-xs text-outline">Buton Linki</label>
+                        <input class="w-full border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all p-3 bg-slate-50" placeholder="https://stayfinder.com/destinations/..." type="url"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center justify-end gap-md pt-md">
+                <button class="px-8 py-3 rounded-lg border border-slate-200 text-slate-600 font-label-bold hover:bg-slate-50 transition-colors" type="button">
+                    Vazgeç
+                </button>
+                <button class="px-10 py-3 rounded-lg bg-orange-600 text-white font-label-bold shadow-lg shadow-orange-500/20 hover:bg-orange-700 transition-all active:scale-95" type="submit">
+                    Değişiklikleri Kaydet
+                </button>
+            </div>
+        </form>
+        <!-- Preview Section -->
+        <div class="mt-xl">
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-md">Önizleme</h4>
+            <div class="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl group">
+                <img class="w-full h-full object-cover" data-alt="A wide-angle cinematic shot of a sunset over the unique rock formations of Cappadocia, Turkey. The sky is filled with colorful hot air balloons in soft oranges, pinks, and purples. In the foreground, a luxury terrace overlooks the ancient fairy chimneys with high-end glass furniture and subtle ambient lighting. The style is professional travel photography, emphasizing a premium, serene, and sophisticated SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjmRNSp5IVOcgit2lj2tyacu2HmNIeuF03iTFlc2mWv-lMJydwgG1BOaPaSrRlMn0piurLuT_U2IeGkx2iF93RUjf96Qlu-sX7B5YLJiaE0rNYOg86TDJd7MNMqzop_SGACw12yuRY4PpEa5GcCj6qQeJVq1y5LzSg9NLNpwq0IFau6XCOWZQcLC6X72me3KfhAvdgvTVMJWFFSXd5u3Dt6O9PYixLAmt09ZeKLyYl6DLuZfqdTfk4sXiEYz5bd4EiiGbmJuUVhgA"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+                    <div class="max-w-2xl glass-panel p-md rounded-xl text-slate-900">
+                        <span class="text-xs font-label-bold uppercase tracking-widest text-orange-600 mb-xs block">Yeni Destinasyon</span>
+                        <h2 class="font-headline-lg text-headline-lg mb-base">Kapadokya, Türkiye</h2>
+                        <p class="text-body-md text-slate-700 mb-md">Eşsiz peribacaları, tarihi mağara otelleri ve büyüleyici gün doğumu manzaralarıyla rüya gibi bir yolculuk sizi bekliyor.</p>
+                        <button class="bg-orange-600 text-white px-6 py-2 rounded-lg font-label-bold text-sm">Şimdi Keşfet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="mt-xl py-md px-gutter border-t border-slate-100 flex justify-between items-center text-slate-400 text-xs">
+        <p>© 2024 StayFinder Admin Console. Tüm hakları saklıdır.</p>
+        <div class="flex gap-md">
+            <a class="hover:text-orange-500 transition-colors" href="#">Destek</a>
+            <a class="hover:text-orange-500 transition-colors" href="#">Gizlilik Politikası</a>
+            <a class="hover:text-orange-500 transition-colors" href="#">Kullanım Şartları</a>
+        </div>
+    </footer>
+</main>
+<!-- Contextual FAB (Hidden here as per guidelines for Details/Forms) -->
+</body></html>

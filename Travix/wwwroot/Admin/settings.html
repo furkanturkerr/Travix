@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec29a",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "primary-fixed": "#dae2fd",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fea619",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-dim": "#dcd9db",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-bright": "#fcf8fa",
+                        "on-surface-variant": "#45464d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "primary-container": "#131b2e",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary": "#855300",
+                        "surface-container-high": "#eae7e9",
+                        "surface-container": "#f0edef",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "inverse-surface": "#303032",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1b1d",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-low": "#f6f3f5",
+                        "tertiary-container": "#271901",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed h-screen w-64 left-0 top-0 bg-slate-900 border-r border-slate-800 shadow-2xl flex flex-col py-6 z-50">
+    <div class="px-6 mb-8">
+        <h1 class="text-xl font-bold text-white tracking-tight font-headline-md">StayFinder</h1>
+        <p class="text-xs text-slate-400 font-body-sm">Admin Console</p>
+    </div>
+    <nav class="flex-1 space-y-1 overflow-y-auto">
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-bold text-label-bold">Dashboard</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">star</span>
+            <span class="font-label-bold text-label-bold">Hero</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">travel_explore</span>
+            <span class="font-label-bold text-label-bold">Travel Panel</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">map</span>
+            <span class="font-label-bold text-label-bold">Destinations</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">hotel</span>
+            <span class="font-label-bold text-label-bold">Hotels</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">article</span>
+            <span class="font-label-bold text-label-bold">Blog</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">rate_review</span>
+            <span class="font-label-bold text-label-bold">Reviews</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">campaign</span>
+            <span class="font-label-bold text-label-bold">CTA</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">view_headline</span>
+            <span class="font-label-bold text-label-bold">Footer</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">event_available</span>
+            <span class="font-label-bold text-label-bold">Reservations</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-bold text-label-bold">Users</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="font-label-bold text-label-bold">Messages</span>
+        </div>
+        <div class="flex items-center gap-3 px-4 py-3 text-orange-500 bg-slate-800/50 border-r-4 border-orange-500 cursor-pointer transition-colors duration-200">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="font-label-bold text-label-bold">Settings</span>
+        </div>
+    </nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+    <!-- TopNavBar Shell -->
+    <header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-slate-100 shadow-sm flex justify-between items-center h-16 px-8">
+        <div class="flex items-center gap-4 flex-1">
+            <div class="relative w-full max-w-md">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-secondary-container/20 outline-none" placeholder="Ayarları ara..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 text-slate-500">
+                <span class="material-symbols-outlined cursor-pointer hover:text-orange-600 transition-colors">notifications</span>
+                <span class="material-symbols-outlined cursor-pointer hover:text-orange-600 transition-colors">help_outline</span>
+            </div>
+            <div class="h-8 w-px bg-slate-200 mx-2"></div>
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <p class="font-label-bold text-label-bold text-slate-900 leading-none">Ahmet Yılmaz</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Süper Admin</p>
+                </div>
+                <img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover" data-alt="A professional headshot of a middle-aged male administrator with a confident smile, wearing a sharp navy blue suit and a clean white shirt. The background is a blurred office environment with soft morning light filtering through high windows, creating a bright and airy atmosphere. The image has a high-end, executive aesthetic with natural skin tones and professional clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgwuXZMKglQAhxN1pxnmBGhEEM2p-YNenUYWuLtMmHLUDuk_i-9goi5zoguioDBY3hFHhjCEF9Vx-f-Q5Mvj-wyiegUySOHBjSo9_J-hJm1cb37ci4um0T7qOTeybjM89BMVN3QqYgwCO-Wkhz7dcqZl_ucsSM_OfvOnBPSTBwm160_1vIE6aqox_JCDlj5ba7mEfTzYHYMWJm1KSiGzmJTD6tRb92iqskz-v73evqBZC-LFIsU1QqAamay3w8OQbFXvQCkneaYK0"/>
+            </div>
+        </div>
+    </header>
+    <!-- Canvas Area -->
+    <section class="p-lg space-y-lg max-w-[1200px] mx-auto w-full">
+        <header class="flex justify-between items-end">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-background">Sistem Ayarları</h2>
+                <p class="text-body-md text-outline">Platform genel yapılandırmasını ve entegrasyonlarını buradan yönetin.</p>
+            </div>
+            <button class="bg-primary text-white px-md py-sm rounded-lg font-label-bold hover:opacity-90 transition-opacity flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">save</span>
+                Tümünü Kaydet
+            </button>
+        </header>
+        <!-- Navigation Tabs -->
+        <div class="flex gap-8 border-b border-outline-variant">
+            <button class="pb-4 border-b-2 border-orange-500 text-orange-600 font-label-bold flex items-center gap-2">
+                <span class="material-symbols-outlined">settings</span>
+                Genel
+            </button>
+            <button class="pb-4 border-b-2 border-transparent text-outline hover:text-on-surface font-label-bold flex items-center gap-2 transition-colors">
+                <span class="material-symbols-outlined">api</span>
+                API Entegrasyonları
+            </button>
+            <button class="pb-4 border-b-2 border-transparent text-outline hover:text-on-surface font-label-bold flex items-center gap-2 transition-colors">
+                <span class="material-symbols-outlined">search_check</span>
+                SEO
+            </button>
+            <button class="pb-4 border-b-2 border-transparent text-outline hover:text-on-surface font-label-bold flex items-center gap-2 transition-colors">
+                <span class="material-symbols-outlined">mail</span>
+                E-Posta Sunucusu
+            </button>
+            <button class="pb-4 border-b-2 border-transparent text-outline hover:text-on-surface font-label-bold flex items-center gap-2 transition-colors">
+                <span class="material-symbols-outlined">share</span>
+                Sosyal Medya
+            </button>
+        </div>
+        <!-- Settings Grid -->
+        <div class="grid grid-cols-12 gap-gutter">
+            <!-- Left Column: Primary Sections -->
+            <div class="col-span-12 lg:col-span-8 space-y-gutter">
+                <!-- API Settings Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-md border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
+                        <h3 class="font-headline-md text-headline-md text-slate-900">API Yapılandırması</h3>
+                        <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded font-bold uppercase tracking-wider">Aktif Bağlantılar</span>
+                    </div>
+                    <div class="p-md space-y-lg">
+                        <!-- Booking API -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-md items-start">
+                            <div>
+                                <label class="font-label-bold text-slate-700 block">Rezervasyon API</label>
+                                <p class="text-body-sm text-outline mt-1">Global otel envanteri için ana sağlayıcı.</p>
+                            </div>
+                            <div class="md:col-span-2 space-y-md">
+                                <div class="relative">
+                                    <input class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 text-body-md focus:border-secondary-container focus:ring-1 focus:ring-secondary-container outline-none transition-all" type="password" value="sk_test_51MzS2lH8NfE9o2a1"/>
+                                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 cursor-pointer">visibility</span>
+                                </div>
+                                <div class="flex gap-4">
+                                    <select class="flex-1 bg-slate-50 border-slate-200 rounded-lg px-4 py-2 text-body-sm">
+                                        <option>Booking.com Engine V2</option>
+                                        <option>Expedia Partner API</option>
+                                        <option>Airbnb Channel Manager</option>
+                                    </select>
+                                    <button class="bg-slate-900 text-white px-4 py-2 rounded-lg text-body-sm hover:bg-slate-800 transition-colors">Test Et</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-slate-50"/>
+                        <!-- Weather API -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-md items-start">
+                            <div>
+                                <label class="font-label-bold text-slate-700 block">Hava Durumu API</label>
+                                <p class="text-body-sm text-outline mt-1">Destinasyon bazlı anlık hava tahmini.</p>
+                            </div>
+                            <div class="md:col-span-2">
+                                <input class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 text-body-md focus:border-secondary-container focus:ring-1 focus:ring-secondary-container outline-none" placeholder="OpenWeatherMap API Anahtarı" type="text"/>
+                            </div>
+                        </div>
+                        <hr class="border-slate-50"/>
+                        <!-- Currency API -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-md items-start">
+                            <div>
+                                <label class="font-label-bold text-slate-700 block">Döviz Kuru API</label>
+                                <p class="text-body-sm text-outline mt-1">Anlık TCMB ve uluslararası kurlar.</p>
+                            </div>
+                            <div class="md:col-span-2">
+                                <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                                        <span class="material-symbols-outlined">payments</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-body-sm font-bold">Fixer.io Entegrasyonu</p>
+                                        <p class="text-[12px] text-outline">Son güncelleme: Bugün 14:32</p>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                        <span class="text-[12px] font-bold text-green-600 uppercase">Bağlı</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEO Settings Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-md border-b border-slate-50 bg-slate-50/50">
+                        <h3 class="font-headline-md text-headline-md text-slate-900">SEO Ayarları</h3>
+                    </div>
+                    <div class="p-md space-y-md">
+                        <div class="grid grid-cols-1 gap-md">
+                            <div>
+                                <label class="font-label-bold text-slate-700 block mb-1">Site Başlığı Şablonu</label>
+                                <input class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 text-body-md" type="text" value="{page_title} | StayFinder - Dünyayı Keşfedin"/>
+                            </div>
+                            <div>
+                                <label class="font-label-bold text-slate-700 block mb-1">Meta Açıklaması (Varsayılan)</label>
+                                <textarea class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 text-body-md" rows="3">StayFinder ile en uygun fiyatlı otelleri, benzersiz destinasyonları ve unutulmaz tatil fırsatlarını keşfedin. Güvenli rezervasyonun adresi.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Sidebar Settings -->
+            <div class="col-span-12 lg:col-span-4 space-y-gutter">
+                <!-- Social Media Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                    <div class="p-md border-b border-slate-50 bg-slate-50/50">
+                        <h3 class="font-headline-md text-headline-md text-slate-900">Sosyal Medya</h3>
+                    </div>
+                    <div class="p-md space-y-md">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg">
+                                <span class="material-symbols-outlined">public</span>
+                            </div>
+                            <input class="flex-1 bg-slate-50 border-slate-200 rounded-lg px-4 py-2 text-body-sm" placeholder="Instagram URL" type="text"/>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-sky-50 text-sky-600 rounded-lg">
+                                <span class="material-symbols-outlined">alternate_email</span>
+                            </div>
+                            <input class="flex-1 bg-slate-50 border-slate-200 rounded-lg px-4 py-2 text-body-sm" placeholder="X (Twitter) URL" type="text"/>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-red-50 text-red-600 rounded-lg">
+                                <span class="material-symbols-outlined">video_library</span>
+                            </div>
+                            <input class="flex-1 bg-slate-50 border-slate-200 rounded-lg px-4 py-2 text-body-sm" placeholder="YouTube URL" type="text"/>
+                        </div>
+                        <button class="w-full py-3 border-2 border-dashed border-slate-200 text-outline rounded-lg text-body-sm font-label-bold hover:border-orange-200 hover:text-orange-500 transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">add_circle</span>
+                            Platform Ekle
+                        </button>
+                    </div>
+                </div>
+                <!-- Maintenance Mode Card -->
+                <div class="bg-secondary-container rounded-xl shadow-lg p-md text-on-secondary-container">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white">construction</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-white leading-none">Bakım Modu</h4>
+                            <p class="text-[12px] opacity-80 mt-1">Siteyi ziyaretçilere kapat.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-black/10 rounded-lg p-3">
+                        <span class="font-label-bold text-white">Durum: Kapalı</span>
+                        <div class="w-12 h-6 bg-slate-300 rounded-full relative cursor-pointer">
+                            <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- System Info -->
+                <div class="glass-panel rounded-xl p-md">
+                    <h4 class="font-label-bold text-slate-900 mb-md flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">info</span>
+                        Sistem Bilgisi
+                    </h4>
+                    <div class="space-y-sm text-body-sm">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-outline">Versiyon</span>
+                            <span class="font-bold text-slate-700">v4.8.2-stable</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-outline">PHP Sürümü</span>
+                            <span class="font-bold text-slate-700">8.2.10</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="text-outline">Sunucu</span>
+                            <span class="font-bold text-slate-700">AWS Frankfurt</span>
+                        </div>
+                        <div class="flex justify-between pt-2">
+                            <span class="text-outline">Son Yedekleme</span>
+                            <span class="font-bold text-slate-700">2 saat önce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Action Bar (Contextual) -->
+        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-md py-md rounded-full shadow-2xl flex items-center gap-lg border border-slate-800 z-50">
+            <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                <p class="text-body-sm font-label-bold">Kaydedilmemiş değişiklikleriniz var</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="text-slate-400 hover:text-white text-body-sm font-label-bold transition-colors">İptal Et</button>
+                <button class="bg-orange-500 text-white px-md py-2 rounded-full text-body-sm font-label-bold hover:bg-orange-600 transition-colors">Şimdi Kaydet</button>
+            </div>
+        </div>
+    </section>
+</main>
+</body></html>

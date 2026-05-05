@@ -12,7 +12,6 @@
       <Folder Include="Areas\Admin\Pages\" />
       <Folder Include="Models\" />
       <Folder Include="Pages\" />
-      <Folder Include="wwwroot\Admin\" />
     </ItemGroup>
 
     <ItemGroup>

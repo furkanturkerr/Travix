@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dec29a",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "primary-fixed": "#dae2fd",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fea619",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#98805d",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-dim": "#dcd9db",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-bright": "#fcf8fa",
+                        "on-surface-variant": "#45464d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "primary-container": "#131b2e",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary": "#855300",
+                        "surface-container-high": "#eae7e9",
+                        "surface-container": "#f0edef",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "inverse-surface": "#303032",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1b1d",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-low": "#f6f3f5",
+                        "tertiary-container": "#271901",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased">
+<!-- SideNavBar -->
+<aside class="fixed h-screen w-64 left-0 top-0 bg-slate-900 border-r border-slate-800 shadow-2xl flex flex-col py-6 z-50 font-noto-serif">
+    <div class="px-6 mb-10 flex items-center gap-3">
+        <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-white" data-icon="hotel">hotel</span>
+        </div>
+        <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">StayFinder</h1>
+            <p class="text-xs text-slate-400">Admin Console</p>
+        </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+            <span class="text-sm font-medium">Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-orange-500 bg-slate-800/50 border-r-4 border-orange-500 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+            <span class="text-sm font-medium">Hotels</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+            <span class="text-sm font-medium">Travel Panel</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="map">map</span>
+            <span class="text-sm font-medium">Destinations</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+            <span class="text-sm font-medium">Reservations</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="group">group</span>
+            <span class="text-sm font-medium">Users</span>
+        </a>
+        <a class="flex items-center gap-3 px-6 py-3 text-slate-400 hover:text-white hover:bg-slate-800/30 transition-colors duration-200 cursor-pointer active:opacity-80" href="#">
+            <span class="material-symbols-outlined" data-icon="forum">forum</span>
+            <span class="text-sm font-medium">Messages</span>
+        </a>
+    </nav>
+    <div class="px-6 mt-auto">
+        <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-700/50">
+            <div class="flex items-center gap-3 mb-4">
+                <img class="w-10 h-10 rounded-full border-2 border-orange-500" data-alt="A professional portrait of a senior hotel administrator in a modern office setting. He is wearing a crisp navy suit and has a warm, confident expression. The background is softly blurred with warm interior lighting and architectural details of a luxury hotel lobby, maintaining a high-end corporate aesthetic with neutral tones and orange accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCDO-asZhLXSKRCg7njSNUpVOtcOY4fHKyL-jTJ2VGouTC5rVfcvr9qQnaNKKZzSBMn1lfRxl4jpJkSnJh4I2Smy6ZU3hNwtpAqecNs6SNTd9iZYTmYCA2H_RtFlS0iFBDQl4OtdMZcnqW8Zjm-fSHTX6g2gpdbWpB-TMdkk-rOWdmxIgKcw3aOeAN9vaKyzPC8w2td2jzD7hKB7VASNX4v-jKHvc1pPtW4tCG0YZI9rsjT6-GG-2Zz-YDrA2RKkPmyOA0oH7rdv0"/>
+                <div>
+                    <p class="text-sm font-bold text-white">Yönetici Paneli</p>
+                    <p class="text-xs text-slate-400">admin@stayfinder.com</p>
+                </div>
+            </div>
+            <a class="flex items-center gap-2 text-xs font-semibold text-orange-500 hover:text-orange-400" href="#">
+                <span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+                Ayarlar
+            </a>
+        </div>
+    </div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+    <!-- TopNavBar -->
+    <header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-slate-100 shadow-sm flex justify-between items-center h-16 px-8 font-noto-serif font-medium">
+        <div class="flex items-center gap-4 flex-1">
+            <div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-orange-500/20 rounded-lg transition-all">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+                <input class="w-full bg-slate-100/50 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-0 focus:outline-none" placeholder="Otel veya şehir ara..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="relative text-slate-500 hover:text-orange-500 transition-colors">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                <span class="absolute top-0 right-0 w-2 h-2 bg-orange-600 rounded-full border-2 border-white"></span>
+            </button>
+            <button class="text-slate-500 hover:text-orange-500 transition-colors">
+                <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+            </button>
+            <div class="h-8 w-[1px] bg-slate-200"></div>
+            <div class="flex items-center gap-3">
+                <span class="text-sm font-bold text-slate-900">Admin Kullanıcı</span>
+            </div>
+        </div>
+    </header>
+    <!-- Canvas Area -->
+    <div class="p-lg max-w-container-max mx-auto space-y-lg">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+            <div>
+                <h2 class="font-display-xl text-display-xl text-primary mb-2">Otel Yönetimi</h2>
+                <p class="font-body-lg text-body-lg text-outline">Sistemdeki tüm konaklama tesislerini yönetin ve güncelleyin.</p>
+            </div>
+            <button class="bg-primary text-on-primary font-label-bold text-label-bold px-lg py-3 rounded-xl shadow-lg hover:bg-slate-800 transition-all flex items-center gap-2 w-fit">
+                <span class="material-symbols-outlined" data-icon="add">add</span>
+                Yeni Otel Ekle
+            </button>
+        </div>
+        <!-- Filters Panel -->
+        <div class="glass-panel p-md rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-4 gap-md items-end">
+            <div class="space-y-2">
+                <label class="font-label-bold text-label-bold text-on-surface-variant block">Şehir / Ülke</label>
+                <select class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-sm focus:ring-2 focus:ring-secondary-container transition-all">
+                    <option>Tümü</option>
+                    <option>İstanbul, Türkiye</option>
+                    <option>Antalya, Türkiye</option>
+                    <option>Bodrum, Türkiye</option>
+                    <option>Paris, Fransa</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-bold text-label-bold text-on-surface-variant block">Yıldız Sayısı</label>
+                <select class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-sm focus:ring-2 focus:ring-secondary-container transition-all">
+                    <option>Tümü</option>
+                    <option>5 Yıldız</option>
+                    <option>4 Yıldız</option>
+                    <option>3 Yıldız ve Altı</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-bold text-label-bold text-on-surface-variant block">Durum</label>
+                <select class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-sm focus:ring-2 focus:ring-secondary-container transition-all">
+                    <option>Hepsi</option>
+                    <option>Aktif</option>
+                    <option>Pasif</option>
+                    <option>Beklemede</option>
+                </select>
+            </div>
+            <button class="w-full bg-secondary-container text-on-secondary-container font-label-bold text-label-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                Filtreleri Uygula
+            </button>
+        </div>
+        <!-- Hotels Table Area -->
+        <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                <tr class="bg-surface-container text-on-surface-variant font-label-bold text-label-bold">
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider">Otel Bilgisi</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider">Konum</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider">Değerlendirme</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider text-right">Fiyat (Gecelik)</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider text-center">Öne Çıkan</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider">Durum</th>
+                    <th class="px-md py-4 font-semibold uppercase tracking-wider text-right">İşlemler</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-14 rounded-lg overflow-hidden bg-slate-100">
+                                <img class="w-full h-full object-cover" data-alt="A wide-angle, luxurious exterior view of a premier 5-star Mediterranean resort at sunset. The architectural lighting highlights the white stone walls and infinity pool reflecting the golden hour sky. The style is ultra-modern and minimalist, emphasizing tranquility and quiet luxury with a warm, glowing color palette of gold and navy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYc5A1O3SiXj2jclc-ea-OkNgcekF-Ub1-gW46THbJBMP58B_G4xVVPjwdjvcgIA-gOobzr1Qt-xuj2GfUewa0HHbmQUxlBHzlrcRpjCc3ncyvbi5AhGrJ-pKTDW4PRL8z_XYZCSeLadrex_p8Di7SFfBuVIBe7Tgpvhpsg_gQGCM-hA_wW56zksXXise0hj4TbnDJuymzHRMDWJyjVddzg2qn34S8-DC3SFNd4Wnz2JusK-I4SODIPko2ozbVXGUOYnYdeekxGg"/>
+                            </div>
+                            <div>
+                                <div class="font-headline-md text-body-md font-bold text-slate-900">Grand Riviera Hotel</div>
+                                <div class="flex text-orange-500">
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-body-sm text-outline">Antalya, Türkiye</td>
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-primary text-white font-bold text-xs px-2 py-1 rounded">9.2</div>
+                            <span class="text-body-sm text-outline">Harika</span>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-right font-bold text-slate-900">₺4.200</td>
+                    <td class="px-md py-4 text-center">
+                        <span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase px-2 py-1 rounded-full">Evet</span>
+                    </td>
+                    <td class="px-md py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Aktif
+                                </span>
+                    </td>
+                    <td class="px-md py-4 text-right">
+                        <div class="flex justify-end gap-2">
+                            <button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+                            <button class="p-2 text-slate-400 hover:text-secondary-container transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+                            <button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-14 rounded-lg overflow-hidden bg-slate-100">
+                                <img class="w-full h-full object-cover" data-alt="An interior shot of a sophisticated boutique hotel suite overlooking the Bosphorus in Istanbul. The room features high-end velvet textures, minimalist furniture, and large floor-to-ceiling windows. The lighting is soft and airy, creating a high-contrast, premium SaaS aesthetic with subtle blue and orange light reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36tEOhlI7Ft5md03dxFxju3No5brj8pEXZy0Rj_5E31VUFBHu-9htPUFvV3MNzCv6XcguNQ7VQQXlMMIAaS9mj9AiyENOKPKdYkp1i2BEiycXCaS06gB_nyqkmweoc2Vq0IsZs_XlFuJcOUMAmQM1kNuhr-CQWyWZnRZJTD6YtSAad3NT9SxmqiweR5UNjhk9x2I8zMD3U8honPHD1lZb0ABCPEcIKZgXivsAuRuQY4dFfkBy_9P-80JKw1sejc0XFrFbJ7wEO50"/>
+                            </div>
+                            <div>
+                                <div class="font-headline-md text-body-md font-bold text-slate-900">Bosphorus Palace</div>
+                                <div class="flex text-orange-500">
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs">star</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-body-sm text-outline">İstanbul, Türkiye</td>
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-primary text-white font-bold text-xs px-2 py-1 rounded">8.8</div>
+                            <span class="text-body-sm text-outline">Çok İyi</span>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-right font-bold text-slate-900">₺6.800</td>
+                    <td class="px-md py-4 text-center">
+                        <span class="bg-surface-variant text-outline text-[10px] font-bold uppercase px-2 py-1 rounded-full">Hayır</span>
+                    </td>
+                    <td class="px-md py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span> Aktif
+                                </span>
+                    </td>
+                    <td class="px-md py-4 text-right">
+                        <div class="flex justify-end gap-2">
+                            <button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+                            <button class="p-2 text-slate-400 hover:text-secondary-container transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+                            <button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-14 rounded-lg overflow-hidden bg-slate-100">
+                                <img class="w-full h-full object-cover" data-alt="A modern, glass-walled alpine lodge nestled in a snow-covered valley. The building glows with warm internal lights against the cool, misty blue of a winter twilight. The photography is professional and sleek, using a wide dynamic range to capture the crisp white snow and deep navy shadows, conveying a sense of exclusive seclusion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93m5R6rkkN0myXkmG4VQ5YC2B0ShOkwK44Wncj2BL1vMnIu8wZ8xNhgcD7wD8xj0znCUNLH3tlbRK3xm50mx3pVgfT_DSLoQdvBEFIfRFaUgy-xkUqsnar7iDe9vzE5M1sWfuXWaT5inPvKswFdmybkQCnLowo3rsYOeVBHZ_ll1OVtwwikMXsKiEYX0rEAWRU-mxyARYvrtKp00tFzS63fxlofebpBen3Q0x9DFYBii0PO9_yp8N8NWYtc1dH9jpTHbPvqfw0b8"/>
+                            </div>
+                            <div>
+                                <div class="font-headline-md text-body-md font-bold text-slate-900">Mountain Peak Resort</div>
+                                <div class="flex text-orange-500">
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-body-sm text-outline">Bursa, Türkiye</td>
+                    <td class="px-md py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-primary text-white font-bold text-xs px-2 py-1 rounded">9.5</div>
+                            <span class="text-body-sm text-outline">Mükemmel</span>
+                        </div>
+                    </td>
+                    <td class="px-md py-4 text-right font-bold text-slate-900">₺2.950</td>
+                    <td class="px-md py-4 text-center">
+                        <span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase px-2 py-1 rounded-full">Evet</span>
+                    </td>
+                    <td class="px-md py-4">
+<span class="inline-flex items-center gap-1.5 text-xs font-bold text-orange-500">
+<span class="w-2 h-2 rounded-full bg-orange-500"></span> Pasif
+                                </span>
+                    </td>
+                    <td class="px-md py-4 text-right">
+                        <div class="flex justify-end gap-2">
+                            <button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+                            <button class="p-2 text-slate-400 hover:text-secondary-container transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+                            <button class="p-2 text-slate-400 hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span></button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- Pagination -->
+            <div class="px-md py-4 border-t border-slate-100 flex items-center justify-between bg-surface-container-low">
+                <p class="text-body-sm text-outline">Toplam 156 otelden 1-10 arası gösteriliyor</p>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:border-primary hover:text-primary transition-all">
+                        <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition-all">2</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition-all">3</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:border-primary hover:text-primary transition-all">
+                        <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Management Stats Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <div class="glass-panel p-md rounded-xl shadow-sm flex items-center gap-lg">
+                <div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl" data-icon="trending_up">trending_up</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-outline uppercase tracking-wider">Doluluk Oranı</p>
+                    <p class="font-display-xl text-headline-lg text-primary">84%</p>
+                    <p class="text-xs text-emerald-600 font-bold">+2.4% geçen aya göre</p>
+                </div>
+            </div>
+            <div class="glass-panel p-md rounded-xl shadow-sm flex items-center gap-lg">
+                <div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-outline uppercase tracking-wider">Ortalama Gelir</p>
+                    <p class="font-display-xl text-headline-lg text-primary">₺12.4k</p>
+                    <p class="text-xs text-emerald-600 font-bold">+5.1% artış</p>
+                </div>
+            </div>
+            <div class="glass-panel p-md rounded-xl shadow-sm flex items-center gap-lg">
+                <div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-3xl" data-icon="star_rate">star_rate</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-outline uppercase tracking-wider">Genel Puan</p>
+                    <p class="font-display-xl text-headline-lg text-primary">4.8/5</p>
+                    <p class="text-xs text-slate-500">2.5k Değerlendirme</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="mt-xl p-lg border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-outline text-body-sm bg-white/50 backdrop-blur-sm">
+        <p>© 2024 StayFinder Admin Console. Tüm hakları saklıdır.</p>
+        <div class="flex gap-md mt-4 md:mt-0">
+            <a class="hover:text-primary transition-colors" href="#">Kullanım Koşulları</a>
+            <a class="hover:text-primary transition-colors" href="#">Gizlilik Politikası</a>
+            <a class="hover:text-primary transition-colors" href="#">Destek</a>
+        </div>
+    </footer>
+</main>
+</body></html>

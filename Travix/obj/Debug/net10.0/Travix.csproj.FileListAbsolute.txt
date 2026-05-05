@@ -305,3 +305,11 @@
 /Users/furkanturker/RiderProjects/Travix/Travix/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/furkanturker/RiderProjects/Travix/Travix/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/furkanturker/RiderProjects/Travix/Travix/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/0jozo4o80b-{0}-h9wqau7tae-h9wqau7tae.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/o20c37jlb2-{0}-6ogl1eqomh-6ogl1eqomh.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/3u8dehfgw5-{0}-xkmi6hfz3n-xkmi6hfz3n.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/896i9lqjl6-{0}-afxu3dyl28-afxu3dyl28.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/o4zno67qg3-{0}-qcxy4cchar-qcxy4cchar.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/3hwggap287-{0}-k8dfdl2snq-k8dfdl2snq.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/2qv0wo3qql-{0}-yuz2pimsg4-yuz2pimsg4.gz
+/Users/furkanturker/RiderProjects/Travix/Travix/obj/Debug/net10.0/compressed/orru50muz0-{0}-2ifgexwpud-2ifgexwpud.gz
