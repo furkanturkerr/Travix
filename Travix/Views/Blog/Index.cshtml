@@ -4,99 +4,140 @@
 
 <!DOCTYPE html>
 <html lang="tr">
-@await Component.InvokeAsync("_ListHeadComponentPartial")
 
-<body class="bg-[#F8FAFC]">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body class="bg-background font-body-md text-on-background">
+
 @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
 
-<section class="pt-32 pb-20 bg-[#F8FAFC] border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-8">
-        <span class="inline-flex items-center rounded-full bg-orange-100 text-orange-600 px-4 py-2 text-xs font-bold uppercase mb-6">
+<section class="relative h-[360px] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1800"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Travix Blog" />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center px-6">
+        <span class="inline-flex items-center rounded-full bg-secondary-fixed text-secondary px-4 py-2 text-xs font-label-bold uppercase mb-5">
             Travix Blog
         </span>
 
-        <h1 class="text-5xl md:text-6xl font-black text-[#0F172A] mb-4 leading-tight">
-            Seyahat Rehberi
+        <h1 class="text-5xl md:text-6xl font-headline-lg text-white mb-4">
+            Seyahatin Yeni Hikayesi
         </h1>
 
-        <p class="text-lg text-slate-500 max-w-2xl leading-relaxed">
-            Otel seçimi, şehir rehberleri ve seyahat ipuçlarıyla daha bilinçli seyahat edin.
+        <p class="text-white/85 text-body-lg max-w-2xl mx-auto">
+            En iyi oteller, gizli kalmış destinasyonlar ve unutulmaz deneyimler için hazırlanan özel rehberleri keşfet.
         </p>
     </div>
 </section>
 
-<section class="py-20 bg-[#F8FAFC]">
+<section class="py-xl bg-background">
     <div class="max-w-7xl mx-auto px-8">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-lg">
+            <div>
+                <h2 class="text-headline-lg font-headline-lg text-primary mb-3">
+                    Seyahat Rehberi
+                </h2>
 
-            <div class="lg:col-span-4">
-                <div class="bg-white rounded-[28px] p-8 border border-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sticky top-28">
-                    <span class="material-symbols-outlined text-orange-500 text-4xl mb-5">auto_stories</span>
+                <p class="text-body-lg text-on-surface-variant">
+                    Seyahatiniz öncesi ilham alabileceğiniz ipuçları ve rehberler.
+                </p>
+            </div>
 
-                    <h2 class="text-3xl font-black text-[#0F172A] mb-3">
-                        Son Yazılar
-                    </h2>
+            <a href="#"
+               class="bg-white border border-outline-variant text-primary px-8 py-4 rounded-xl font-label-bold hover:border-secondary-container hover:text-secondary transition-all">
+                Tüm Yazılar
+            </a>
+        </div>
 
-                    <p class="text-slate-500 leading-relaxed mb-8">
-                        Seyahatinizi daha iyi planlamanız için seçilmiş rehberler ve pratik öneriler.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow border border-slate-100 group">
+                <div class="h-64 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-secondary-fixed via-[#8fc8bd] to-[#3d8d86] group-hover:scale-105 transition-transform duration-700"></div>
+                </div>
+
+                <div class="p-8">
+                    <div class="flex items-center text-xs font-label-bold text-secondary-container mb-4 uppercase tracking-widest">
+                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span>
+                        12 Haziran 2024
+                    </div>
+
+                    <h3 class="text-headline-md font-headline-md text-primary mb-4 leading-tight">
+                        Avrupa'da Unutulmaz Bir Gurme Turu İçin 5 Şehir
+                    </h3>
+
+                    <p class="text-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                        Mutfak kültürünün zirvesinde bir yolculuğa çıkmaya hazır mısınız? İşte lezzet duraklarınız...
                     </p>
 
-                    <div class="flex flex-wrap gap-2">
-                        <button class="px-5 py-2 rounded-full bg-[#0F172A] text-white text-sm font-semibold">Tümü</button>
-                        <button class="px-5 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-semibold border border-slate-200">Otel</button>
-                        <button class="px-5 py-2 rounded-full bg-slate-50 text-slate-600 text-sm font-semibold border border-slate-200">Rehber</button>
-                    </div>
+                    <a href="#" class="font-label-bold text-primary flex items-center hover:text-secondary-container transition-colors">
+                        Devamını Oku
+                        <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow border border-slate-100 group">
+                <div class="h-64 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-[#2f8f8d] via-secondary-fixed to-secondary-container group-hover:scale-105 transition-transform duration-700"></div>
+                </div>
 
-                <article class="group bg-white rounded-[28px] overflow-hidden border border-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.06)] hover:-translate-y-1 transition-all">
-                    <div class="h-64 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1200" />
+                <div class="p-8">
+                    <div class="flex items-center text-xs font-label-bold text-secondary-container mb-4 uppercase tracking-widest">
+                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span>
+                        08 Haziran 2024
                     </div>
-                    <div class="p-7">
-                        <div class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-4">12 Haziran 2026</div>
-                        <h3 class="text-2xl font-bold text-[#0F172A] mb-4 leading-snug">
-                            Avrupa’da İlk Kez Seyahat Edecekler İçin 7 Öneri
-                        </h3>
-                        <p class="text-slate-500 leading-relaxed mb-7">
-                            Şehir seçimi, otel konumu, ulaşım ve bütçe planlaması konusunda seyahatinizi kolaylaştıracak öneriler.
-                        </p>
-                        <a href="#" class="inline-flex items-center font-bold text-[#0F172A] group-hover:text-orange-600 transition">
-                            Devamını Oku
-                            <span class="material-symbols-outlined ml-1 text-lg">arrow_forward</span>
-                        </a>
-                    </div>
-                </article>
 
-                <article class="group bg-white rounded-[28px] overflow-hidden border border-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.06)] hover:-translate-y-1 transition-all">
-                    <div class="h-64 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200" />
-                    </div>
-                    <div class="p-7">
-                        <div class="text-xs font-bold text-orange-500 uppercase tracking-widest mb-4">08 Haziran 2026</div>
-                        <h3 class="text-2xl font-bold text-[#0F172A] mb-4 leading-snug">
-                            Otel Seçerken Nelere Dikkat Etmelisiniz?
-                        </h3>
-                        <p class="text-slate-500 leading-relaxed mb-7">
-                            Konum, yorum sayısı, puan, fiyat ve oda özelliklerini doğru değerlendirerek daha iyi seçim yapabilirsiniz.
-                        </p>
-                        <a href="#" class="inline-flex items-center font-bold text-[#0F172A] group-hover:text-orange-600 transition">
-                            Devamını Oku
-                            <span class="material-symbols-outlined ml-1 text-lg">arrow_forward</span>
-                        </a>
-                    </div>
-                </article>
+                    <h3 class="text-headline-md font-headline-md text-primary mb-4 leading-tight">
+                        Boutique Otel Seçerken Dikkat Etmeniz Gerekenler
+                    </h3>
 
-            </div>
+                    <p class="text-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                        Lüksü butik bir atmosferde yaşamak isteyenler için doğru seçim rehberi burada.
+                    </p>
+
+                    <a href="#" class="font-label-bold text-primary flex items-center hover:text-secondary-container transition-colors">
+                        Devamını Oku
+                        <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow border border-slate-100 group">
+                <div class="h-64 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-primary-fixed-dim via-[#91c9be] to-secondary-fixed group-hover:scale-105 transition-transform duration-700"></div>
+                </div>
+
+                <div class="p-8">
+                    <div class="flex items-center text-xs font-label-bold text-secondary-container mb-4 uppercase tracking-widest">
+                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span>
+                        05 Haziran 2024
+                    </div>
+
+                    <h3 class="text-headline-md font-headline-md text-primary mb-4 leading-tight">
+                        Vahşi Doğada Lüks: En İyi Safari Destinasyonları
+                    </h3>
+
+                    <p class="text-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                        Macera ve konforun buluştuğu dünyanın en özel safari bölgelerini sizin için derledik.
+                    </p>
+
+                    <a href="#" class="font-label-bold text-primary flex items-center hover:text-secondary-container transition-colors">
+                        Devamını Oku
+                        <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>
 
 @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
 </body>
 </html>

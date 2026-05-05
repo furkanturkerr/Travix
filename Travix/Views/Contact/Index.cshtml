@@ -4,101 +4,163 @@
 
 <!DOCTYPE html>
 <html lang="tr">
-@await Component.InvokeAsync("_ListHeadComponentPartial")
 
-<body class="bg-[#F8FAFC]">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body class="bg-background font-body-md text-on-background">
+
 @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
 
-<section class="pt-32 pb-20 bg-[#F8FAFC] border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-8">
-        <span class="inline-flex items-center rounded-full bg-orange-100 text-orange-600 px-4 py-2 text-xs font-bold uppercase mb-6">
+<section class="relative h-[360px] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1800"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Travix İletişim" />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center px-6">
+        <span class="inline-flex items-center rounded-full bg-secondary-fixed text-secondary px-4 py-2 text-xs font-label-bold uppercase mb-5">
             Travix İletişim
         </span>
 
-        <h1 class="text-5xl md:text-6xl font-black text-[#0F172A] mb-4 leading-tight">
-            Bizimle iletişime geç
+        <h1 class="text-5xl md:text-6xl font-headline-lg text-white mb-4">
+            Size Nasıl Yardımcı Olabiliriz?
         </h1>
 
-        <p class="text-lg text-slate-500 max-w-2xl leading-relaxed">
-            Soruların mı var? Travix ekibi sana yardımcı olmak için burada.
+        <p class="text-white/85 text-body-lg max-w-2xl mx-auto">
+            Rezervasyon, öneri veya destek… Travix ekibi her adımda yanında.
         </p>
     </div>
 </section>
 
-<section class="py-20 bg-[#F8FAFC]">
+<section class="py-xl bg-background">
     <div class="max-w-7xl mx-auto px-8">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
 
             <div class="lg:col-span-7">
-                <div class="bg-white rounded-[28px] p-10 border border-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
-                    <h2 class="text-3xl font-black text-[#0F172A] mb-8">
+                <div class="bg-white rounded-card hotel-card-shadow border border-slate-100 p-8 md:p-10">
+                    <span class="inline-flex items-center rounded-full bg-secondary-fixed text-secondary px-4 py-2 text-xs font-label-bold uppercase mb-6">
+                        Mesaj Formu
+                    </span>
+
+                    <h2 class="text-headline-lg font-headline-lg text-primary mb-3">
                         Mesaj Gönder
                     </h2>
 
+                    <p class="text-body-md text-on-surface-variant mb-8">
+                        Formu doldurun, ekibimiz en kısa sürede size dönüş yapsın.
+                    </p>
+
                     <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Ad Soyad"
-                                   class="w-full border border-slate-200 rounded-xl p-4 focus:ring-2 focus:ring-orange-400 outline-none" />
-                            <input type="email" placeholder="E-posta"
-                                   class="w-full border border-slate-200 rounded-xl p-4 focus:ring-2 focus:ring-orange-400 outline-none" />
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                            <div>
+                                <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                    Ad Soyad
+                                </label>
+                                <input type="text"
+                                       placeholder="Ad Soyad"
+                                       class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                    E-posta
+                                </label>
+                                <input type="email"
+                                       placeholder="E-posta"
+                                       class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                            </div>
                         </div>
 
-                        <input type="text" placeholder="Konu"
-                               class="w-full border border-slate-200 rounded-xl p-4 focus:ring-2 focus:ring-orange-400 outline-none" />
+                        <div>
+                            <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                Konu
+                            </label>
+                            <input type="text"
+                                   placeholder="Konu"
+                                   class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                        </div>
 
-                        <textarea rows="6" placeholder="Mesajınız..."
-                                  class="w-full border border-slate-200 rounded-xl p-4 focus:ring-2 focus:ring-orange-400 outline-none"></textarea>
+                        <div>
+                            <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                Mesaj
+                            </label>
+                            <textarea rows="6"
+                                      placeholder="Mesajınız..."
+                                      class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"></textarea>
+                        </div>
 
                         <button type="submit"
-                                class="bg-[#0F172A] text-white px-8 py-4 rounded-xl font-semibold hover:-translate-y-0.5 transition">
+                                class="bg-primary text-white px-10 py-5 rounded-2xl font-label-bold hover:scale-105 transition-all shadow-xl">
                             Gönder
                         </button>
                     </form>
                 </div>
             </div>
 
-            <div class="lg:col-span-5 space-y-6">
-                <div class="bg-white rounded-[28px] p-8 border border-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
-                    <h3 class="text-2xl font-black text-[#0F172A] mb-6">
+            <div class="lg:col-span-5 space-y-gutter">
+
+                <div class="bg-white rounded-card hotel-card-shadow border border-slate-100 p-8">
+                    <h3 class="text-headline-md font-headline-md text-primary mb-6">
                         İletişim Bilgileri
                     </h3>
 
-                    <div class="space-y-5 text-slate-600">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-orange-500">mail</span>
-                            support@travix.com
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">E-posta</p>
+                                <p class="text-body-md text-primary font-semibold">support@travix.com</p>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-orange-500">call</span>
-                            +90 555 123 45 67
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">call</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">Telefon</p>
+                                <p class="text-body-md text-primary font-semibold">+90 555 123 45 67</p>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-orange-500">location_on</span>
-                            İstanbul, Türkiye
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">Adres</p>
+                                <p class="text-body-md text-primary font-semibold">İstanbul, Türkiye</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-[#0F172A] text-white rounded-[28px] p-8 shadow-[0_20px_60px_rgba(15,23,42,0.14)]">
-                    <h3 class="text-2xl font-black mb-3">
+                <div class="bg-primary text-white rounded-card p-8 shadow-xl">
+                    <span class="material-symbols-outlined text-secondary-container text-4xl mb-5">support_agent</span>
+
+                    <h3 class="text-headline-md font-headline-md mb-3">
                         Hızlı Destek
                     </h3>
 
-                    <p class="text-slate-300 mb-6">
-                        En kısa sürede sana dönüş yapıyoruz.
+                    <p class="text-body-md text-white/70 mb-6">
+                        Rezervasyon, otel arama veya hesap işlemleri için hızlı destek alabilirsiniz.
                     </p>
 
-                    <button class="bg-white text-[#0F172A] px-6 py-3 rounded-xl font-semibold">
+                    <button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-bold hover:brightness-95 transition-all">
                         Canlı Destek
                     </button>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </section>
 
 @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
 </body>
 </html>
