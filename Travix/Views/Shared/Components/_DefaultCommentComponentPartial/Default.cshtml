@@ -1,59 +1,58 @@
+@model List<Travix.Dtos.AdminDtos.CommentDtos.ResultCommentDto>
+
 <section class="py-xl bg-white overflow-hidden relative">
     <div class="absolute -right-20 top-0 w-96 h-96 bg-secondary-fixed/30 rounded-full blur-3xl -z-0"></div>
+
     <div class="max-w-7xl mx-auto px-8 relative z-10 text-center">
-        <h2 class="text-headline-lg font-headline-lg text-slate-900 mb-lg">Misafirlerimizin Deneyimleri</h2>
+        <h2 class="text-headline-lg font-headline-lg text-slate-900 mb-lg">
+            Misafirlerimizin Deneyimleri
+        </h2>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <div class="bg-white p-10 rounded-card hotel-card-shadow border border-slate-100 text-left">
-                <div class="flex text-secondary-container mb-6">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                </div>
-                <p class="text-body-lg text-slate-700 italic mb-10 leading-relaxed">"Travix ile yaptığım tüm rezervasyonlar kusursuz geçti. Müşteri hizmetleri her an yanımızdaydı."</p>
-                <div class="flex items-center">
-                    <img class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMoi-Lbl_qSTnhr9jbZ-vAzFNgivu783GwcAagUSmzrNGeZPAJYJFvMofzVl6jkw0IyhPbrkjiaZp8_hlmWqH76xXa0YtRnzmFPzvlglIjI_UAMqIQHsAy0JAhZymAaxn179joj4vh0WdJJ_eDG8elXubjTnJPVov9dcOd2W3gPU1My3FsydsRiJzsnNd1H28I9KtDBW-1s1eAcz1wjXbv3N0FXbapKvHUrhFoiDMjy1KL2Rce5SnkR8x6SXW4nwVvAUeDxSGwDM"/>
-                    <div>
-                        <h4 class="font-label-bold text-slate-900">Ahmet Yılmaz</h4>
-                        <span class="text-body-sm text-slate-400">İş İnsanı</span>
+            @{
+                var index = 0;
+            }
+
+            @foreach (var item in Model.Where(x => x.IsStatus).Take(3))
+            {
+                var isFeatured = index == 1;
+
+                <div class="@(isFeatured 
+                    ? "bg-slate-900 text-white p-10 rounded-card shadow-2xl text-left scale-105 z-10" 
+                    : "bg-white p-10 rounded-card hotel-card-shadow border border-slate-100 text-left")">
+
+                    <div class="flex text-secondary-container mb-6">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
+                                star
+                            </span>
+                        }
+                    </div>
+
+                    <p class="text-body-lg @(isFeatured ? "text-white/90" : "text-slate-700") italic mb-10 leading-relaxed">
+                        "@item.CommantText"
+                    </p>
+
+                    <div class="flex items-center">
+                        <img class="w-14 h-14 rounded-full object-cover border-2 @(isFeatured ? "border-slate-700" : "border-white") shadow-md mr-4"
+                             src="@item.ImageUrl"
+                             alt="@item.NameSurname" />
+
+                        <div>
+                            <h4 class="font-label-bold @(isFeatured ? "text-white" : "text-slate-900")">
+                                @item.NameSurname
+                            </h4>
+
+                            <span class="text-body-sm text-slate-400">
+                                @item.Title
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-slate-900 text-white p-10 rounded-card shadow-2xl text-left scale-105 z-10">
-                <div class="flex text-secondary-container mb-6">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                </div>
-                <p class="text-body-lg text-white/90 italic mb-10 leading-relaxed">"Otel seçenekleri o kadar kaliteli ki, seçim yapmakta zorlanıyoruz. Her tatilimiz bir öncekini aratıyor."</p>
-                <div class="flex items-center">
-                    <img class="w-14 h-14 rounded-full object-cover border-2 border-slate-700 shadow-md mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbMVgyO20hBNNb0KNJxBbEod1XhWa8h7QD7UG1QluhtbADoBHczegEsBwQrLfhZMOUvPuJSB1xx3nyP3lhkFDsPhjR1JIm5E9qFyQb95zBgwHv-sTHsAz0YBNtbqp8jDuaIER_0M5ZoAviPY88xr5U8b-A0wxkv0VrJtK1q0T4suQU6XIj4eb91JupBGhvs545GU5EopqkF_jJM49LT1jjP_Zvhg6eKetsj5tR-gmek4RNMrnw1W302IV_Rqd0c2cgo2a-lOZdWmw"/>
-                    <div>
-                        <h4 class="font-label-bold">Elif Kaya</h4>
-                        <span class="text-body-sm text-slate-400">Dijital İçerik Üreticisi</span>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white p-10 rounded-card hotel-card-shadow border border-slate-100 text-left">
-                <div class="flex text-secondary-container mb-6">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                </div>
-                <p class="text-body-lg text-slate-700 italic mb-10 leading-relaxed">"Fiyatlar piyasaya göre çok avantajlı. Özellikle erken rezervasyon fırsatları inanılmaz."</p>
-                <div class="flex items-center">
-                    <img class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUcc8qlNpSgHXu_vo1XZR8g9BdZ5Aoaw8IBlMAeqiN3iZQG1_6L7d22SPa4t8hnP37yGwQO_42qd7F-f4EjzDLOxir4Uyfc7AJ6BEczH-qHqIIHjl9PhmYvqR0_thGjwyMC7YP5XeevMCKsTlacHrxmf1FS8-ux8_J52N6vXKQqu9ka74SnsPEHy2VB5cQIFk7ZmltEgDME2ZvvghDZHT8NnFzavU5lrcxXdkkHds8QQL0W97UitknzpC0sm9gxcWpUizYc3DyEoc"/>
-                    <div>
-                        <h4 class="font-label-bold text-slate-900">Mehmet Demir</h4>
-                        <span class="text-body-sm text-slate-400">Yazılımcı</span>
-                    </div>
-                </div>
-            </div>
+
+                index++;
+            }
         </div>
     </div>
 </section>

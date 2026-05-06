@@ -2,6 +2,7 @@
 
 @{
     Layout = "~/Views/Admin/Index.cshtml";
+    int i = 0;
 }
 
 <div class="flex justify-between items-end mb-8">
@@ -32,8 +33,9 @@
             <tbody class="divide-y divide-slate-50">
                 @foreach (var item in Model)
                 {
+                    i++;
                     <tr class="hover:bg-surface-container-lowest transition-colors group">
-                        <td class="px-6 py-4 font-label-bold">#@item.BlogId</td>
+                        <td class="px-6 py-4 font-label-bold">#@i</td>
                         <td class="px-6 py-4">
                             @if (!string.IsNullOrEmpty(item.ImageUrl))
                             {
