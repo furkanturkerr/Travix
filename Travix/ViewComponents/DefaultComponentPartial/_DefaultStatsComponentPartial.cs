@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Travix.Dtos;
@@ -42,15 +43,33 @@ public class _DefaultStatsComponentPartial : ViewComponent
             ViewBag.UsdTry = currency.Result.ToString("F");
         }
         
+        CurrencyDto? eurCurrency = null;
+        
         var eurResponse = await client.GetAsync("http://localhost:5049/api/Stats/Currency?from=eur&to=try");
 
         if (eurResponse.IsSuccessStatusCode)
         {
             var eurJson = await eurResponse.Content.ReadAsStringAsync();
-            var currency = JsonConvert.DeserializeObject<CurrencyDto>(eurJson);
+            eurCurrency = JsonConvert.DeserializeObject<CurrencyDto>(eurJson);
 
-            ViewBag.EurTry = currency.Result.ToString("F");
+            ViewBag.EurTry = eurCurrency?.Result.ToString("F");
         }
+        
+        var oilResponse = await client.GetAsync("http://localhost:5049/api/Stats/Oil");
+        
+        if (oilResponse.IsSuccessStatusCode)
+        {
+            var oilJson = await oilResponse.Content.ReadAsStringAsync();
+            var oil = JsonConvert.DeserializeObject<OilDto>(oilJson);
+            var turkey = oil?.Result?.FirstOrDefault(x => x.Country == "Turkey");
+            var gasolineEuro = double.Parse(
+                (turkey?.Gasoline ?? "0").Replace(",", "."), 
+                CultureInfo.InvariantCulture
+            );
+            var gasolineTry = gasolineEuro * (eurCurrency?.Result ?? 1); 
+            ViewBag.Gasoline = gasolineTry.ToString("F2");
+        }
+        
         return View();
     }
 }

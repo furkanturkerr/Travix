@@ -8,7 +8,7 @@ public class WeatherDto
 
 public class Main
 {
-    public double Temprature { get; set; }  // API'de yazım hatası var, aynı bırak
+    public double Temprature { get; set; }  
 }
 
 public class Weather

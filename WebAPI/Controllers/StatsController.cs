@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
                 RequestUri = new Uri("https://weather-api167.p.rapidapi.com/api/weather/current?place=Antalya%2CTr&units=standard&lang=en&mode=json"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "228321f524msh2f2cbcfabd83e56p1d01fbjsn7b1af1c27a41" },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi2"] },
                     { "x-rapidapi-host", "weather-api167.p.rapidapi.com" },
                     { "Accept", "application/json" }
                 },
@@ -57,6 +57,29 @@ namespace WebAPI.Controllers
                 },
             };
 
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                return Ok(body);
+            }
+        }
+
+        [HttpGet("Oil")]
+        public async Task<IActionResult> Oil()
+        {
+            var client = _httpClientFactory.CreateClient();
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://gas-price.p.rapidapi.com/europeanCountries"),
+                Headers =
+                {
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi1"] },
+                    { "x-rapidapi-host", "gas-price.p.rapidapi.com" },
+                },
+            };
             using (var response = await client.SendAsync(request))
             {
                 response.EnsureSuccessStatusCode();
