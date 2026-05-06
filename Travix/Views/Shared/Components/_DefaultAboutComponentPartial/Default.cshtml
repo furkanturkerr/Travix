@@ -1,0 +1,69 @@
+@model List<Travix.Dtos.AdminDtos.AboutDtos.ResultAboutDto>
+
+@foreach (var item in Model)
+{
+    <section class="py-xl max-w-7xl mx-auto px-8">
+    <div class="bg-white rounded-[40px] overflow-hidden flex flex-col md:flex-row hotel-card-shadow min-h-[600px] border border-slate-100">
+        <div class="md:w-1/2 relative">
+            <img class="w-full h-full object-cover"
+                 src="@item.ImageUrl" />
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        <div class="md:w-1/2 p-lg flex flex-col justify-center">
+
+            <span class="inline-block bg-secondary-fixed text-secondary font-label-bold px-4 py-1 rounded-full text-xs mb-6 w-fit uppercase">
+                Hakkımızda
+            </span>
+
+            <h2 class="text-display-xl font-display-xl text-slate-900 mb-6">
+                @item.Title
+            </h2>
+
+            <p class="text-body-lg text-slate-600 mb-8 leading-relaxed">
+                @item.Description
+            </p>
+
+            <!-- ÖZELLİKLER -->
+            <div class="grid grid-cols-2 gap-6 mb-10">
+
+                <div class="flex items-center space-x-3">
+                    <span class="material-symbols-outlined text-secondary-container">travel_explore</span>
+                    <span class="text-body-md font-semibold">@item.Features1</span>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <span class="material-symbols-outlined text-secondary-container">bolt</span>
+                    <span class="text-body-md font-semibold">@item.Features2</span>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <span class="material-symbols-outlined text-secondary-container">monitoring</span>
+                    <span class="text-body-md font-semibold">@item.Features3</span>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <span class="material-symbols-outlined text-secondary-container">filter_alt</span>
+                    <span class="text-body-md font-semibold">@item.Features4</span>
+                </div>
+
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="/Hotel/List"
+                   class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-label-bold hover:scale-105 transition-all shadow-xl">
+                    Otel Ara
+                </a>
+
+                <div class="text-slate-900">
+                    <span class="block text-xs font-bold text-slate-400 uppercase">
+                        PLATFORM
+                    </span>
+                    <span class="text-headline-lg font-headline-lg">
+                        Travix
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+}

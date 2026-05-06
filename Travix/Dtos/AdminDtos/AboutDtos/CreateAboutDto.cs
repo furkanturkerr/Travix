@@ -8,4 +8,6 @@ public class CreateAboutDto
     public string Features2 { get; set; }
     public string Features3 { get; set; }
     public string Features4 { get; set; }
+    public string ImageUrl { get; set; }
+    public bool IsStatus { get; set; }
 }

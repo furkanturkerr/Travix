@@ -55,6 +55,31 @@ namespace WebAPI.Controllers
             await _travixContext.SaveChangesAsync();
             return Ok("Silme Başarılı");
         }
+        
+        [HttpGet("AboutsTrue")]
+        public async Task<IActionResult> AboutsTrue()
+        {
+            var values = await _travixContext.Abouts.Where(x => x.IsStatus == true).ToListAsync();
+            return Ok(values);
+        }
+
+        [HttpGet("isStatus/{id:int}")]
+        public async Task<IActionResult> IsStatus(int id)
+        {
+            var value = await _travixContext.Abouts.FindAsync(id);
+            if (value.IsStatus == true)
+            {
+                value.IsStatus = false;
+                await _travixContext.SaveChangesAsync();
+            }
+            else
+            {
+                value.IsStatus = true;
+                await _travixContext.SaveChangesAsync();
+            }
+
+            return Ok("Başarılı");
+        }
     }
     
 }

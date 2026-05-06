@@ -56,6 +56,13 @@ namespace WebAPI.Controllers
             return Ok("Silme Başarılı");
         }
 
+        [HttpGet("BlogTrue")]
+        public async Task<IActionResult> BlogTrue()
+        {
+            var values = await _travixContext.Blogs.Where(x => x.IsStatus == true).ToListAsync();
+            return Ok(values);
+        }
+
         [HttpGet("isStatus/{id:int}")]
         public async Task<IActionResult> IsStatus(int id)
         {

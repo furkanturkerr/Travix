@@ -55,6 +55,13 @@ namespace WebAPI.Controllers
             await _travixContext.SaveChangesAsync();
             return Ok("Silme Başarılı");
         }
+
+        [HttpGet("HeroTrue")]
+        public async Task<IActionResult> HeroTrue()
+        {
+            var values = await _travixContext.Heroes.Where(x => x.IsStatus == true).ToListAsync();
+            return Ok(values);
+        }
         
         [HttpGet("isStatus/{id:int}")]
         public async Task<IActionResult> IsStatus(int id)
