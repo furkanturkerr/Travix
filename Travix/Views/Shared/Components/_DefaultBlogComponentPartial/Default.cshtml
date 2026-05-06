@@ -1,3 +1,5 @@
+@model List<Travix.Dtos.AdminDtos.BlogDtos.ResultBlogDto>
+
 <section class="py-xl bg-slate-50">
     <div class="max-w-7xl mx-auto px-8">
         <div class="flex justify-between items-end mb-lg">
@@ -8,45 +10,26 @@
             <button class="bg-white text-slate-900 font-label-bold px-6 py-3 rounded-xl border border-slate-200 hover:bg-slate-100 transition-colors">Tüm Yazılar</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow group">
-                <div class="h-64 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7qRAWR3yfP_d-nchALY3SHqiZ4Hc4RoOcg49V54KMpLXKvtUiDZecofn_ya7YvEU-WjtlC-qaJ30DWZdtWwK8-MV-5tQFYwxJlW4M0cpVxaS4XCTXiwvzLJtWMkvkVLKezzPZmtRoTRArj1FL1r7HweHZs3Y_g5FsQzwUjEsPd4qhSe2fMf48PppP9A63oxR7lFUusJYQQDUtJiIWQjk171Ou-_-X15Vwb1sWPr-Mk-dTf9FPeyag2N2dNrrAq3U7s75i6MZWrTs"/>
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center text-xs font-bold text-secondary-container mb-4 uppercase tracking-widest">
-                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span> 12 Haziran 2024
+            @foreach (var item in Model.Take(3))
+            {
+                <article class="bg-white rounded-card overflow-hidden hotel-card-shadow group">
+                    <div class="h-64 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="@item.ImageUrl"/>
                     </div>
-                    <h3 class="text-headline-md font-headline-md mb-4 leading-tight group-hover:text-secondary-container transition-colors">Avrupa'da Unutulmaz Bir Gurme Turu İçin 5 Şehir</h3>
-                    <p class="text-body-sm text-slate-500 mb-6 line-clamp-3">Mutfak kültürünün zirvesinde bir yolculuğa çıkmaya hazır mısınız? İşte lezzet duraklarınız...</p>
-                    <a class="font-label-bold text-slate-900 flex items-center" href="#">Devamını Oku <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span></a>
-                </div>
-            </article>
-            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow group">
-                <div class="h-64 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqrH_pZqmQ7or0enRJfwC7ZkOshQTH_fKx9OPkACaIHlLcszLHHVQaahsM87GeJPrOHi8S6QlAsQMiOAY5TN-BZlda7mNCrwE-S8X7k2gaqDUXvfmf0OIFN3_sKReczBvm0Qmf2q_Cx9YCW0IMbwa0fDzUVGgi7YTyRVBmh6Q-mngTtE4WZnQ7rsoKIayLq4wGIEOPfptU7CjI72LClBfoPZ_HrzFrjr5i8T80Cdi5bpVIdMlIJB75ien1uJkbxbI5P_evzc8Fsl8"/>
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center text-xs font-bold text-secondary-container mb-4 uppercase tracking-widest">
-                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span> 08 Haziran 2024
+                    <div class="p-8">
+                        <div class="flex items-center text-xs font-bold text-secondary-container mb-4 uppercase tracking-widest">
+                            <span class="material-symbols-outlined text-sm mr-2">calendar_today</span> @item.CreateTime.ToString("dd MMMM yyyy")
+                        </div>
+                        <h3 class="text-headline-md font-headline-md mb-4 leading-tight group-hover:text-secondary-container transition-colors">@item.BlogTitle</h3>
+                        <p class="text-body-sm text-slate-500 mb-6 line-clamp-3">
+                            @(item.BlogDescription.Length > 90 
+                                ? item.BlogDescription.Substring(0, 90) + "..." 
+                                : item.BlogDescription)
+                        </p>
+                        <a class="font-label-bold text-slate-900 flex items-center" href="#">Devamını Oku <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span></a>
                     </div>
-                    <h3 class="text-headline-md font-headline-md mb-4 leading-tight group-hover:text-secondary-container transition-colors">Boutique Otel Seçerken Dikkat Etmeniz Gerekenler</h3>
-                    <p class="text-body-sm text-slate-500 mb-6 line-clamp-3">Lüksü butik bir atmosferde yaşamak isteyenler için doğru seçim rehberi burada.</p>
-                    <a class="font-label-bold text-slate-900 flex items-center" href="#">Devamını Oku <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span></a>
-                </div>
-            </article>
-            <article class="bg-white rounded-card overflow-hidden hotel-card-shadow group">
-                <div class="h-64 overflow-hidden">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1k9Pht3R9k9wWtIFCkuGj3zCr0I7VuPV58fDvREBDGJp2EZXc_tOzn03G_9vFfKjdZcMEBawg57V_FchVVt37_t5EPYuZnNJzhsVtpaj0ecSPrAJsrcA_e12u1NpJHLrS7CrrT0u0YXA7QM2g4P_TSIQuE_eSgmd2qeuJcIqva89zHU3Cy0nPksvsBOJ_D1ruf_NNVgxGJoYrAeh4TpwLeuY2M6dlzJtUPVN9Eow836aqMzKs9vNmb8FSSSj9N2NHwpCdchxQrjM"/>
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center text-xs font-bold text-secondary-container mb-4 uppercase tracking-widest">
-                        <span class="material-symbols-outlined text-sm mr-2">calendar_today</span> 05 Haziran 2024
-                    </div>
-                    <h3 class="text-headline-md font-headline-md mb-4 leading-tight group-hover:text-secondary-container transition-colors">Vahşi Doğada Lüks: En İyi Safari Destinasyonları</h3>
-                    <p class="text-body-sm text-slate-500 mb-6 line-clamp-3">Macera ve konforun buluştuğu dünyanın en özel safari bölgelerini sizin için derledik.</p>
-                    <a class="font-label-bold text-slate-900 flex items-center" href="#">Devamını Oku <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span></a>
-                </div>
-            </article>
+                </article>
+            }
         </div>
     </div>
 </section>

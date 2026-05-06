@@ -15,7 +15,7 @@ public class BlogController : Controller
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> BlogList()
     {
         var client = _httpClientFactory.CreateClient();
         
@@ -45,7 +45,7 @@ public class BlogController : Controller
         var response = await client.PostAsync("http://localhost:5049/api/Blogs", content);
         if (response.IsSuccessStatusCode)
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("BlogList");
         }
         return View(Blog);
     }
@@ -75,7 +75,7 @@ public class BlogController : Controller
         var response = await client.PutAsync("http://localhost:5049/api/Blogs", content);
         if (response.IsSuccessStatusCode)
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("BlogList");
         }
         return View(BlogDto);   
     }
@@ -84,6 +84,6 @@ public class BlogController : Controller
     {
         var client = _httpClientFactory.CreateClient();
         await client.DeleteAsync("http://localhost:5049/api/Blogs?id=" + id);
-        return RedirectToAction("Index");
+        return RedirectToAction("BlogList");
     }
 }

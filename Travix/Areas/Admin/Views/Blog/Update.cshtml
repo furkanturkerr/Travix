@@ -1,0 +1,89 @@
+@model Travix.Dtos.AdminDtos.BlogDtos.UpdateBlogDto
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="mb-8">
+    <div class="flex items-center gap-2 text-slate-400 text-sm mb-3">
+        <a asp-action="BlogList" class="hover:text-orange-500 transition-colors">Blog</a>
+        <span>›</span>
+        <span class="text-on-surface">Güncelle</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface">Güncelle</h2>
+</div>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="BlogId"/>
+    <input type="hidden" asp-for="CreateTime"/>
+    <div class="grid grid-cols-3 gap-6">
+
+        <div class="col-span-2 space-y-5">
+
+            <div class="bg-white rounded-xl border border-slate-100 p-6">
+                <h3 class="font-label-bold text-on-surface mb-4 pb-3 border-b border-slate-100">İçerik Bilgileri</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Başlık *</label>
+                        <input asp-for="BlogTitle" placeholder="Örn: En Güzel Yaz Tatili Rotaları"
+                               class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all"/>
+                        <span asp-validation-for="BlogTitle" class="text-xs text-red-500 mt-1 block"></span>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Açıklama</label>
+                        <textarea asp-for="BlogDescription" rows="18" placeholder="Blog yazısının kısa açıklaması..."
+                                  class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all resize-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Görsel URL</label>
+                        <input asp-for="ImageUrl" placeholder="Örn: https://example.com/image.jpg"
+                               class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="space-y-5">
+
+            <div class="bg-white rounded-xl border border-slate-100 p-6">
+                <h3 class="font-label-bold text-on-surface mb-4 pb-3 border-b border-slate-100">Yayın Ayarları</h3>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <div class="relative">
+                        <input asp-for="IsStatus" type="checkbox" class="sr-only peer"/>
+                        <div class="w-10 h-6 bg-slate-200 rounded-full peer-checked:bg-orange-500 transition-colors"></div>
+                        <div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform peer-checked:translate-x-4"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-on-surface">Aktif</p>
+                        <p class="text-xs text-slate-400">Sayfada görüntülensin</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="bg-orange-50 rounded-xl border border-orange-100 p-5">
+                <div class="flex gap-3">
+                    <span class="material-symbols-outlined text-orange-500 text-xl">tips_and_updates</span>
+                    <div>
+                        <p class="text-sm font-bold text-orange-900">İpucu</p>
+                        <p class="text-xs text-orange-700 mt-1 leading-relaxed">Başlık SEO dostu ve dikkat çekici olmalı. Görsel URL boş bırakılırsa varsayılan görsel kullanılır.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button type="submit"
+                        class="w-full bg-primary-container text-white py-3 rounded-xl font-label-bold hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Güncelle
+                </button>
+                <a asp-action="BlogList"
+                   class="w-full py-3 rounded-xl font-label-bold border border-slate-200 text-on-surface hover:bg-surface-container transition-all text-center">
+                    İptal
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</form>

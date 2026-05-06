@@ -34,6 +34,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Blog Blog)
         {
+            Blog.CreateTime = DateTime.Now;
             await _travixContext.Blogs.AddAsync(Blog);
             await _travixContext.SaveChangesAsync();
             return Ok("Ekleme Başarılı");
