@@ -30,7 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="wwwroot\İmages\.DS_Store" />
+      <Content Include="wwwroot\İmagesProject\.DS_Store" />
     </ItemGroup>
 
 </Project>
