@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
                 RequestUri = new Uri("https://weather-api167.p.rapidapi.com/api/weather/current?place=Antalya%2CTr&units=standard&lang=en&mode=json"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi2"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "weather-api167.p.rapidapi.com" },
                     { "Accept", "application/json" }
                 },
@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
                 RequestUri = new Uri($"https://currency-conversion-and-exchange-rates.p.rapidapi.com/convert?from={from}&to={to}&amount=1"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "currency-conversion-and-exchange-rates.p.rapidapi.com" },
                 },
             };
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
                 RequestUri = new Uri("https://gas-price.p.rapidapi.com/europeanCountries"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi1"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "gas-price.p.rapidapi.com" },
                 },
             };

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Travix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26514ebe61f3035bd512e5dca0d19d2a83b0e1e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6975cf8a6d8fbcfe44fa0a6fdc7718398b55be61")]
 [assembly: System.Reflection.AssemblyProductAttribute("Travix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Travix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

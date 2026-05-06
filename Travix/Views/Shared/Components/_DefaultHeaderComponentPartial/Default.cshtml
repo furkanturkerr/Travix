@@ -1,3 +1,7 @@
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
 <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div class="flex items-center gap-8">
@@ -8,11 +12,45 @@
                 <span class="text-2xl font-bold tracking-tight text-slate-900 font-display-xl">Travix</span>
             </a>
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
-                <a class="text-slate-900 font-semibold border-b-2 border-secondary pb-1 transition-colors" asp-controller="Default" asp-action="Index">Ana Sayfa</a>
-                <a class="hover:text-slate-900 transition-colors">Hakkımızda</a>
-                <a class="hover:text-slate-900 transition-colors" asp-controller="Hotel" asp-action="Index">Oteller</a>
-                <a class="hover:text-slate-900 transition-colors" asp-controller="Blog" asp-action="Index">Blog</a>
-                <a class="hover:text-slate-900 transition-colors" asp-controller="Contact" asp-action="Index">İletişim</a>
+                <a asp-controller="Default"
+                   asp-action="Index"
+                   class="@(controller == "Default"
+                              ? "text-slate-900 font-semibold border-b-2 border-secondary pb-1"
+                              : "hover:text-slate-900 transition-colors")">
+                    Ana Sayfa
+                </a>
+
+                <a asp-controller="About"
+                   asp-action="Index"
+                   class="@(controller == "About"
+                              ? "text-slate-900 font-semibold border-b-2 border-secondary pb-1"
+                              : "hover:text-slate-900 transition-colors")">
+                    Hakkımızda
+                </a>
+
+                <a asp-controller="Hotel"
+                   asp-action="Index"
+                   class="@(controller == "Hotel"
+                              ? "text-slate-900 font-semibold border-b-2 border-secondary pb-1"
+                              : "hover:text-slate-900 transition-colors")">
+                    Oteller
+                </a>
+
+                <a asp-controller="Blog"
+                   asp-action="Index"
+                   class="@(controller == "Blog"
+                              ? "text-slate-900 font-semibold border-b-2 border-secondary pb-1"
+                              : "hover:text-slate-900 transition-colors")">
+                    Blog
+                </a>
+
+                <a asp-controller="Contact"
+                   asp-action="Index"
+                   class="@(controller == "Contact"
+                              ? "text-slate-900 font-semibold border-b-2 border-secondary pb-1"
+                              : "hover:text-slate-900 transition-colors")">
+                    İletişim
+                </a>
             </nav>
         </div>
         <div class="flex items-center gap-4">

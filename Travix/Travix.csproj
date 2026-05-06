@@ -29,4 +29,8 @@
       <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="wwwroot\İmages\.DS_Store" />
+    </ItemGroup>
+
 </Project>

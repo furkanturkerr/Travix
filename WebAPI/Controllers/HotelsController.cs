@@ -29,7 +29,7 @@ namespace Travix.WebAPI.Controllers
                 RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination?query={city}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
@@ -58,7 +58,7 @@ namespace Travix.WebAPI.Controllers
                 RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/searchHotels?dest_id={destId}&search_type=CITY&arrival_date={checkIn}&departure_date={checkOut}&adults={adults}&children_age=0%2C17&room_qty={room}&page_number=1{priceParams}&units=metric&temperature_unit=c&languagecode={language}&currency_code={currency}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
@@ -81,7 +81,7 @@ namespace Travix.WebAPI.Controllers
                 RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/getHotelDetails?hotel_id={id}&arrival_date={checkIn}&departure_date={checkOut}&adults=1&children_age=1%2C17&room_qty=1&units=metric&temperature_unit=c&languagecode=en-us&currency_code=EUR"),
                 Headers =
                 {
-                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi"] },
+                    { "x-rapidapi-key", _configuration["ApiKey:rapidapi3"] },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
