@@ -1,135 +1,215 @@
 @model Travix.Dtos.DefaultHotelListDto
 
 @{
-    Layout = null;
+    Layout = "~/Views/Admin/Index.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>Travix Admin - Site Ayarları</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<div class="mb-8">
+    <div class="flex items-center gap-2 text-slate-400 text-sm mb-3">
+        <a href="/Admin" class="hover:text-orange-500 transition-colors">Admin</a>
+        <span>›</span>
+        <span class="text-on-surface">Anasayfa Otel Ayarları</span>
+    </div>
 
-<body class="bg-slate-100 min-h-screen">
+    <h2 class="font-headline-lg text-headline-lg text-on-surface">
+        Anasayfa Otel Ayarları
+    </h2>
 
-<div class="flex min-h-screen">
+    <p class="text-body-md text-on-surface-variant mt-1">
+        Anasayfada listelenecek öne çıkan otellerin şehir, para birimi ve arama parametrelerini yönetin.
+    </p>
+</div>
 
-    <aside class="w-72 bg-[#0F172A] text-white p-6">
-        <h1 class="text-2xl font-bold mb-10">Travix Admin</h1>
+@if (TempData["Success"] != null)
+{
+    <div class="bg-green-50 text-green-700 px-5 py-4 rounded-xl mb-6 border border-green-100 flex items-center gap-3">
+        <span class="material-symbols-outlined text-green-600">check_circle</span>
+        <span class="text-sm font-label-bold">@TempData["Success"]</span>
+    </div>
+}
 
-        <nav class="space-y-3">
-            <a href="/Admin/SiteSetting/Index"
-               class="block bg-white/10 px-4 py-3 rounded-xl font-semibold">
-                Site Ayarları
-            </a>
+@if (TempData["Error"] != null)
+{
+    <div class="bg-red-50 text-red-700 px-5 py-4 rounded-xl mb-6 border border-red-100 flex items-center gap-3">
+        <span class="material-symbols-outlined text-red-600">error</span>
+        <span class="text-sm font-label-bold">@TempData["Error"]</span>
+    </div>
+}
 
-            <a href="/"
-               class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10">
-                Siteye Git
-            </a>
-        </nav>
-    </aside>
+<form method="post">
+    <div class="grid grid-cols-3 gap-6">
 
-    <main class="flex-1 p-10">
+        <div class="col-span-2 space-y-5">
 
-        <div class="max-w-3xl">
+            <div class="bg-white rounded-xl border border-slate-100 p-6">
+                <h3 class="font-label-bold text-on-surface mb-4 pb-3 border-b border-slate-100">
+                    Listeleme Bilgileri
+                </h3>
 
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-slate-900">Anasayfa Otel Ayarları</h2>
-                <p class="text-slate-500 mt-2">
-                    Anasayfadaki öne çıkan otellerin hangi şehir ve parametrelerle listeleneceğini buradan yönetebilirsin.
-                </p>
+                <input type="hidden" asp-for="DefaultHotelListDtoID" />
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                            Anasayfa Otel Şehri *
+                        </label>
+
+                        <input asp-for="homeHotelCity"
+                               placeholder="Örn: milano"
+                               class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all" />
+
+                        <span asp-validation-for="homeHotelCity" class="text-xs text-red-500 mt-1 block"></span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                                Para Birimi
+                            </label>
+
+                            <select asp-for="homeHotelCurrency"
+                                    class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all bg-white">
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="AED">AED</option>
+                                <option value="TRY">TRY</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                                Dil
+                            </label>
+
+                            <select asp-for="homeHotelLanguage"
+                                    class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all bg-white">
+                                <option value="en-us">İngilizce</option>
+                                <option value="tr">Türkçe</option>
+                                <option value="de">Almanca</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                                Yetişkin Sayısı
+                            </label>
+
+                            <input asp-for="homeHotelAdults"
+                                   type="number"
+                                   min="1"
+                                   class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all" />
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+                                Oda Sayısı
+                            </label>
+
+                            <input asp-for="homeHotelRoom"
+                                   type="number"
+                                   min="1"
+                                   class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-400 outline-none transition-all" />
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            @if (TempData["Success"] != null)
-            {
-                <div class="bg-green-100 text-green-700 px-5 py-4 rounded-xl mb-6">
-                    @TempData["Success"]
-                </div>
-            }
-
-            @if (TempData["Error"] != null)
-            {
-                <div class="bg-red-100 text-red-700 px-5 py-4 rounded-xl mb-6">
-                    @TempData["Error"]
-                </div>
-            }
-
-            <form method="post" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 space-y-6">
-
-                <input type="hidden" asp-for="DefaultHotelListDtoID"/>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">
-                        Anasayfa Otel Şehri
-                    </label>
-                    <input asp-for="homeHotelCity"
-                           class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                           placeholder="milano"/>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">
-                        Para Birimi
-                    </label>
-                    <select asp-for="homeHotelCurrency"
-                            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                        <option value="EUR">EUR</option>
-                        <option value="USD">USD</option>
-                        <option value="AED">AED</option>
-                        <option value="TRY">TRY</option>
-                        <option value="GBP">GBP</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">
-                        Dil
-                    </label>
-                    <select asp-for="homeHotelLanguage"
-                            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                        <option value="en-us">İngilizce</option>
-                        <option value="tr">Türkçe</option>
-                        <option value="de">Almanca</option>
-                    </select>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">
-                            Yetişkin Sayısı
-                        </label>
-                        <input asp-for="homeHotelAdults"
-                               type="number"
-                               min="1"
-                               class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"/>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">
-                            Oda Sayısı
-                        </label>
-                        <input asp-for="homeHotelRoom"
-                               type="number"
-                               min="1"
-                               class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"/>
-                    </div>
-                </div>
-
-                <button type="submit"
-                        class="bg-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-600 transition">
-                    Ayarları Kaydet
-                </button>
-
-            </form>
 
         </div>
 
-    </main>
+        <div class="space-y-5">
 
-</div>
+            <div class="bg-white rounded-xl border border-slate-100 p-6">
+                <h3 class="font-label-bold text-on-surface mb-4 pb-3 border-b border-slate-100">
+                    Önizleme
+                </h3>
 
-</body>
-</html>
+                <div class="space-y-4">
+                    <div class="bg-surface-container-low rounded-xl p-4">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                            Şehir
+                        </p>
+                        <p class="text-sm font-label-bold text-on-surface">
+                            @(string.IsNullOrWhiteSpace(Model?.homeHotelCity) ? "milano" : Model.homeHotelCity)
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-surface-container-low rounded-xl p-4">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                                Para
+                            </p>
+                            <p class="text-sm font-label-bold text-on-surface">
+                                @Model?.homeHotelCurrency
+                            </p>
+                        </div>
+
+                        <div class="bg-surface-container-low rounded-xl p-4">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                                Dil
+                            </p>
+                            <p class="text-sm font-label-bold text-on-surface">
+                                @Model?.homeHotelLanguage
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-surface-container-low rounded-xl p-4">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                                Yetişkin
+                            </p>
+                            <p class="text-sm font-label-bold text-on-surface">
+                                @Model?.homeHotelAdults
+                            </p>
+                        </div>
+
+                        <div class="bg-surface-container-low rounded-xl p-4">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                                Oda
+                            </p>
+                            <p class="text-sm font-label-bold text-on-surface">
+                                @Model?.homeHotelRoom
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-orange-50 rounded-xl border border-orange-100 p-5">
+                <div class="flex gap-3">
+                    <span class="material-symbols-outlined text-orange-500 text-xl">
+                        tips_and_updates
+                    </span>
+
+                    <div>
+                        <p class="text-sm font-bold text-orange-900">
+                            İpucu
+                        </p>
+
+                        <p class="text-xs text-orange-700 mt-1 leading-relaxed">
+                            Bu ayarlar anasayfadaki öne çıkan oteller alanını etkiler. Şehir adını API’nin anlayacağı formatta yazın.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button type="submit"
+                        class="w-full bg-primary-container text-white py-3 rounded-xl font-label-bold hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Ayarları Kaydet
+                </button>
+
+                <a href="/"
+                   class="w-full py-3 rounded-xl font-label-bold border border-slate-200 text-on-surface hover:bg-surface-container transition-all text-center">
+                    Siteye Git
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</form>

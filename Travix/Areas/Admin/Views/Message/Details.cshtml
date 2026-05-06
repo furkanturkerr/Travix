@@ -1,0 +1,64 @@
+@model Travix.Dtos.MessageDtos.UpdateMessageDto
+
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="mb-8">
+    <h2 class="font-headline-lg text-headline-lg">Mesaj Detayı</h2>
+</div>
+
+<div class="grid grid-cols-3 gap-6">
+
+    <!-- SOL -->
+    <div class="col-span-2 space-y-5">
+
+        <div class="bg-white p-6 rounded-xl border border-slate-100">
+            <h3 class="font-label-bold mb-4 border-b pb-2">Mesaj</h3>
+
+            <p><strong>Ad:</strong> @Model.NameSurname</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Konu:</strong> @Model.Subject</p>
+
+            <div class="mt-4 p-4 bg-slate-50 rounded-lg">
+                @Model.Messages
+            </div>
+        </div>
+
+        <form asp-action="Reply" method="post">
+            <input type="hidden" name="MessageId" value="@Model.MessageId" />
+
+            <div class="bg-white p-6 rounded-xl border border-slate-100">
+                <h3 class="font-label-bold mb-4 border-b pb-2">AI Cevap</h3>
+
+                <textarea name="MessageAI" rows="15"
+                          class="w-full border rounded-lg p-3"
+                          placeholder="AI cevabı yaz...">@Model.MessageAI</textarea>
+            </div>
+
+            <button type="submit"
+                    class="mt-4 bg-primary-container text-white px-6 py-3 rounded-xl">
+                Gönder
+            </button>
+        </form>
+    </div>
+
+    <!-- SAĞ -->
+    <div class="space-y-5">
+
+        <div class="bg-white p-6 rounded-xl border border-slate-100">
+            <h3 class="font-label-bold mb-4">Durum</h3>
+
+            @if (Model.IsRead)
+            {
+                <span class="text-green-600 font-bold">Okundu</span>
+            }
+            else
+            {
+                <span class="text-orange-500 font-bold">Yeni Mesaj</span>
+            }
+        </div>
+
+    </div>
+
+</div>
