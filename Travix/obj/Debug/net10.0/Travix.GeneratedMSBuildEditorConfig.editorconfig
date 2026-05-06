@@ -46,12 +46,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvRGVmYXVsdEhvdGVsTGlzdC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/furkanturker/RiderProjects/Travix/Travix/Areas/Admin/Views/Hero/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvSGVyby9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Areas/Admin/Views/Hero/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvSGVyby9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Areas/Admin/Views/Hero/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvSGVyby9VcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/furkanturker/RiderProjects/Travix/Travix/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/furkanturker/RiderProjects/Travix/Travix/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/furkanturker/RiderProjects/Travix/Travix/Views/Blog/Index.cshtml]
@@ -78,6 +94,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWwvTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_AdminHeadComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0FkbWluSGVhZENvbXBvbmVudFBhcnRpYWwvRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_AdminHeaderComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0FkbWluSGVhZGVyQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_AdminNavbarComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0FkbWluTmF2YmFyQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_DefaultDestinationComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0RlZmF1bHREZXN0aW5hdGlvbkNvbXBvbmVudFBhcnRpYWwvRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_DefaultHeaderComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0RlZmF1bHRIZWFkZXJDb21wb25lbnRQYXJ0aWFsL0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_DefaultHeroComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0RlZmF1bHRIZXJvQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/furkanturker/RiderProjects/Travix/Travix/Views/Shared/Components/_DefaultHotelComponentPartial/Default.cshtml]

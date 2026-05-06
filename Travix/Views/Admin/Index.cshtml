@@ -1,0 +1,26 @@
+@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="light" lang="tr">
+
+@await Component.InvokeAsync("_AdminHeadComponentPartial")
+
+<body class="font-body-md text-on-surface antialiased">
+
+@await Component.InvokeAsync("_AdminNavbarComponentPartial")
+
+<main class="ml-64 min-h-screen">
+    
+    @await Component.InvokeAsync("_AdminHeaderComponentPartial")
+    
+    <div class="p-8 space-y-lg max-w-[1400px] mx-auto">
+        @RenderBody()
+    </div>
+</main>
+</body>
+</html>

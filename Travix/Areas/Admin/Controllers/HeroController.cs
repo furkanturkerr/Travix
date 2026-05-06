@@ -18,16 +18,16 @@ public class HeroController : Controller
     public async Task<IActionResult> Index()
     {
         var client = _httpClientFactory.CreateClient();
-        
-        var response = await client.GetAsync("http://localhost:5049/api/Heros");
+    
+        var response = await client.GetAsync("http://localhost:5049/api/Heroes");
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
             var value = JsonConvert.DeserializeObject<List<ResultHeroDto>>(jsonData);
-            return View(value);
+            return View(value ?? new List<ResultHeroDto>());
         }
-        
-        return View();
+    
+        return View(new List<ResultHeroDto>());
     }
 
     public async Task<IActionResult> Create()
@@ -42,7 +42,7 @@ public class HeroController : Controller
         
         var json = JsonConvert.SerializeObject(Hero);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await client.PostAsync("http://localhost:5049/api/Heros", content);
+        var response = await client.PostAsync("http://localhost:5049/api/Heroes", content);
         if (response.IsSuccessStatusCode)
         {
             return RedirectToAction("Index");
@@ -55,7 +55,7 @@ public class HeroController : Controller
     {
         var client = _httpClientFactory.CreateClient();
 
-        var response = await client.GetAsync("http://localhost:5049/api/Heros/" + id);
+        var response = await client.GetAsync("http://localhost:5049/api/Heroes/" + id);
         if (response.IsSuccessStatusCode)
         {
             var jsonData = await response.Content.ReadAsStringAsync();
@@ -72,7 +72,7 @@ public class HeroController : Controller
 
         var json = JsonConvert.SerializeObject(HeroDto);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await client.PutAsync("http://localhost:5049/api/Heros", content);
+        var response = await client.PutAsync("http://localhost:5049/api/Heroes", content);
         if (response.IsSuccessStatusCode)
         {
             return RedirectToAction("Index");
@@ -83,7 +83,7 @@ public class HeroController : Controller
     public async Task<IActionResult> Delete(int id)
     {
         var client = _httpClientFactory.CreateClient();
-        await client.DeleteAsync("http://localhost:5049/api/Heros?id=" + id);
+        await client.DeleteAsync("http://localhost:5049/api/Heroes?id=" + id);
         return RedirectToAction("Index");
     }
 }
