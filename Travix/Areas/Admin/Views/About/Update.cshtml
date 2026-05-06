@@ -1,0 +1,16 @@
+@model Travix.Dtos.AdminDtos.AboutDtos.UpdateAboutDto
+
+@{
+    Layout = "_Layout";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="AboutId"/>
+    <input asp-for="Title" class="form-control"/>
+    <input asp-for="Description" class="form-control"/>
+    <input asp-for="Features1" class="form-control"/>
+    <input asp-for="Features2" class="form-control"/>
+    <input asp-for="Features3" class="form-control"/>
+    <input asp-for="Features4" class="form-control"/>
+    <button class="btn btn-primary">Güncelle</button>
+</form>

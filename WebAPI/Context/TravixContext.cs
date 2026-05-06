@@ -12,4 +12,9 @@ public class TravixContext : DbContext
     }
     
     public DbSet<HotelList> HotelLists { get; set; }
+    public DbSet<Hero> Heroes { get; set; }
+    public DbSet<Destination> Destinations { get; set; }
+    public DbSet<About> Abouts { get; set; }
+    public DbSet<Blog>  Blogs { get; set; }
+    public DbSet<Comment>  Comments { get; set; }
 }

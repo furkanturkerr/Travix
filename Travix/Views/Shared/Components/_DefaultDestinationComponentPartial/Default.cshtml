@@ -1,0 +1,35 @@
+@* @{ *@
+@*     var index = 0; *@
+@* } *@
+@* *@
+@* <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-[600px]"> *@
+@* *@
+@*     @foreach (var item in Model) *@
+@*     { *@
+@*         if (index == 0) *@
+@*         { *@
+@*             <div class="md:col-span-2 relative rounded-card overflow-hidden group"> *@
+@*                 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="@item.ImageUrl" /> *@
+@*                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div> *@
+@*                 <div class="absolute bottom-8 left-8 text-white"> *@
+@*                     <h3 class="text-headline-md font-headline-md">@item.CityName</h3> *@
+@*                     <p class="text-body-sm opacity-80">@item.HotelCount Konaklama Seçeneği</p> *@
+@*                 </div> *@
+@*             </div> *@
+@*         } *@
+@*         else *@
+@*         { *@
+@*             <div class="relative rounded-card overflow-hidden group"> *@
+@*                 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="@item.ImageUrl" /> *@
+@*                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div> *@
+@*                 <div class="absolute bottom-8 left-8 text-white"> *@
+@*                     <h3 class="text-headline-md font-headline-md">@item.CityName</h3> *@
+@*                     <p class="text-body-sm opacity-80">@item.HotelCount Konaklama Seçeneği</p> *@
+@*                 </div> *@
+@*             </div> *@
+@*         } *@
+@* *@
+@*         index++; *@
+@*     } *@
+@* *@
+@* </div> *@

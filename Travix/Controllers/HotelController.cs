@@ -26,6 +26,9 @@ public class HotelController : Controller
         var currency = "EUR";
         var language = "en-us";
         var room = "1";
+        
+        ViewBag.CheckIn = checkIn;
+        ViewBag.CheckOut = checkOut;
 
         var response = await client.GetAsync(
             $"http://localhost:5049/api/Hotels?city={city}&checkIn={checkIn}&checkOut={checkOut}&adults={adults}&currency={currency}&language={language}&room={room}"

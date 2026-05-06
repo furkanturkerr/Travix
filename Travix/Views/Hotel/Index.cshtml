@@ -2,6 +2,8 @@
 
 @{
     Layout = null;
+    var checkIn = ViewBag.CheckIn;
+    var checkOut = ViewBag.CheckOut;
 }
 
 <!DOCTYPE html>
@@ -253,7 +255,7 @@
                                     Vergiler hariç
                                 </span>
 
-                                <a href="/Hotel/Details?id=@property?.id"
+                                <a href="/Hotel/Details?id=@property?.id&checkIn=@checkIn&checkOut=@checkOut"
                                    class="block w-full text-center bg-[#fea619] text-[#684000] py-3 rounded-xl font-semibold hover:shadow-md transition active:scale-95">
                                     Detayları Gör
                                 </a>
