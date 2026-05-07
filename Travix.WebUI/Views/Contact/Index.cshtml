@@ -1,0 +1,204 @@
+@model Travix.Dtos.MessageDtos.CreateMessageDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body class="bg-background font-body-md text-on-background">
+
+@await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+<section class="relative h-[360px] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1800"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Travix.WebUI İletişim" />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center px-6">
+        <span class="inline-flex items-center rounded-full bg-secondary-fixed text-secondary px-4 py-2 text-xs font-label-bold uppercase mb-5">
+            Travix.WebUI İletişim
+        </span>
+
+        <h1 class="text-5xl md:text-6xl font-headline-lg text-white mb-4">
+            Size Nasıl Yardımcı Olabiliriz?
+        </h1>
+
+        <p class="text-white/85 text-body-lg max-w-2xl mx-auto">
+            Rezervasyon, öneri veya destek… Travix.WebUI ekibi her adımda yanında.
+        </p>
+    </div>
+</section>
+
+<section class="py-xl bg-background">
+    <div class="max-w-7xl mx-auto px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-card hotel-card-shadow border border-slate-100 p-8 md:p-10">
+                    <span class="inline-flex items-center rounded-full bg-secondary-fixed text-secondary px-4 py-2 text-xs font-label-bold uppercase mb-6">
+                        Mesaj Formu
+                    </span>
+
+                    <h2 class="text-headline-lg font-headline-lg text-primary mb-3">
+                        Mesaj Gönder
+                    </h2>
+
+                    <p class="text-body-md text-on-surface-variant mb-8">
+                        Formu doldurun, ekibimiz en kısa sürede size dönüş yapsın.
+                    </p>
+
+                    <form asp-controller="Contact" asp-action="SendMessage" method="post" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                            <div>
+                                <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                    Ad Soyad
+                                </label>
+                                <input type="text"
+                                       asp-for="@Model.NameSurname"
+                                       placeholder="Ad Soyad"
+                                       class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                    E-posta
+                                </label>
+                                <input type="email"
+                                       asp-for="@Model.Email"
+                                       placeholder="E-posta"
+                                       class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                Konu
+                            </label>
+                            <input type="text"
+                                   asp-for="@Model.Subject"
+                                   placeholder="Konu"
+                                   class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" />
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-label-bold uppercase text-on-surface-variant mb-2">
+                                Mesaj
+                            </label>
+                            <textarea rows="6"
+                            asp-for="@Model.Messages"
+          placeholder="Mesajınız..."
+          class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-4 text-primary focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all"></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="bg-primary text-white px-10 py-5 rounded-2xl font-label-bold hover:scale-105 transition-all shadow-xl">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-gutter">
+
+                <div class="bg-white rounded-card hotel-card-shadow border border-slate-100 p-8">
+                    <h3 class="text-headline-md font-headline-md text-primary mb-6">
+                        İletişim Bilgileri
+                    </h3>
+
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">E-posta</p>
+                                <p class="text-body-md text-primary font-semibold">support@travix.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">call</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">Telefon</p>
+                                <p class="text-body-md text-primary font-semibold">+90 555 123 45 67</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-label-bold text-on-surface-variant uppercase">Adres</p>
+                                <p class="text-body-md text-primary font-semibold">İstanbul, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-primary text-white rounded-card p-8 shadow-xl">
+                    <span class="material-symbols-outlined text-secondary-container text-4xl mb-5">support_agent</span>
+
+                    <h3 class="text-headline-md font-headline-md mb-3">
+                        Hızlı Destek
+                    </h3>
+
+                    <p class="text-body-md text-white/70 mb-6">
+                        Rezervasyon, otel arama veya hesap işlemleri için hızlı destek alabilirsiniz.
+                    </p>
+
+                    <button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-bold hover:brightness-95 transition-all">
+                        Canlı Destek
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (TempData["Basarili"] != null)
+{
+    <script>
+        Swal.fire({
+            toast: true,
+            position: "top-end",
+            icon: "success",
+            title: "@TempData["Basarili"]",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+    </script>
+}
+
+@if (TempData["Basarisiz"] != null)
+{
+    <script>
+        Swal.fire({
+            toast: true,
+            position: "top-end",
+            icon: "error",
+            title: "@TempData["Basarisiz"]",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+    </script>
+}
+
+@await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+</body>
+</html>

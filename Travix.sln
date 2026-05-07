@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travix", "Travix\Travix.csproj", "{5C991942-FB77-443C-AF63-7F933C904029}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travix.WebUI", "Travix.WebUI\Travix.WebUI.csproj", "{5C991942-FB77-443C-AF63-7F933C904029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{4E64FE46-4A85-49FE-AAC1-68E889191875}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travix.WebAPI", "Travix.WebAPI\Travix.WebAPI.csproj", "{4E64FE46-4A85-49FE-AAC1-68E889191875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

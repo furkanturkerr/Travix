@@ -1,0 +1,68 @@
+@model List<Travix.Dtos.AdminDtos.BlogDtos.ResultBlogDto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body class="bg-background font-body-md text-on-background">
+
+@await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+<section class="relative h-[360px] flex items-center justify-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1800"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="Travix.WebUI Blog" />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center px-6">
+
+        <h1 class="text-5xl md:text-6xl font-headline-lg text-white mb-4">
+            Seyahatin Yeni Hikayesi
+        </h1>
+
+        <p class="text-white/85 text-body-lg max-w-2xl mx-auto">
+            En iyi oteller, gizli kalmış destinasyonlar ve unutulmaz deneyimler için hazırlanan özel rehberleri keşfet.
+        </p>
+    </div>
+</section>
+
+<section class="py-xl bg-background">
+    <div class="max-w-7xl mx-auto px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+            @foreach (var item in Model)
+            {
+                <article class="bg-white rounded-card overflow-hidden hotel-card-shadow group">
+                    <div class="h-64 overflow-hidden">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="@item.ImageUrl"/>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-xs font-bold text-secondary-container mb-4 uppercase tracking-widest">
+                            <span class="material-symbols-outlined text-sm mr-2">calendar_today</span> @item.CreateTime.ToString("dd MMMM yyyy")
+                        </div>
+                        <h3 class="text-headline-md font-headline-md mb-4 leading-tight group-hover:text-secondary-container transition-colors">@item.BlogTitle</h3>
+                        <p class="text-body-sm text-slate-500 mb-6 line-clamp-3">
+                            @(item.BlogDescription.Length > 90 
+                                ? item.BlogDescription.Substring(0, 90) + "..." 
+                                : item.BlogDescription)
+                        </p>
+                        <a class="font-label-bold text-slate-900 flex items-center" href="#">Devamını Oku <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span></a>
+                    </div>
+                </article>
+            }
+
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+</body>
+</html>
