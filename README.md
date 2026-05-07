@@ -158,21 +158,21 @@ Bu yapı müşteri destek sürecini otomatik hale getirir.
 
 # 🏠 Anasayfa
 
-![anasayfa1](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a1.png?raw=true)
+![anasayfa1](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a1.png?raw=true)
 
-![anasayfa2](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a2.png?raw=true)
+![anasayfa2](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a2.png?raw=true)
 
-![anasayfa3](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a3.png?raw=true)
+![anasayfa3](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a3.png?raw=true)
 
-![anasayfa4](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a4.png?raw=true)
+![anasayfa4](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a4.png?raw=true)
 
-![anasayfa5](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a5.png?raw=true)
+![anasayfa5](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a5.png?raw=true)
 
-![anasayfa6](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a6.png?raw=true)
+![anasayfa6](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a6.png?raw=true)
 
-![anasayfa7](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a7.png?raw=true)
+![anasayfa7](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a7.png?raw=true)
 
-![anasayfa8](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/a8.png?raw=true)
+![anasayfa8](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/a8.png?raw=true)
 
 ---
 
@@ -184,19 +184,19 @@ Bu yapı müşteri destek sürecini otomatik hale getirir.
 
 # 🏨 Otel Detay
 
-![otel-detay](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/d5.png?raw=true)
+![otel-detay](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/d5.png?raw=true)
 
 ---
 
 # 📰 Blog Sayfası
 
-![blog](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/blog_index.png?raw=true)
+![blog](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/blog_index.png?raw=true)
 
 ---
 
 # 📩 İletişim Sayfası
 
-![contact](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/contact_index.png?raw=true)
+![contact](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/contact_index.png?raw=true)
 
 ---
 
@@ -204,30 +204,30 @@ Bu yapı müşteri destek sürecini otomatik hale getirir.
 
 ## Otel Ayarları
 
-![otel-ayar](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/otelayar.png?raw=true)
+![otel-ayar](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/otelayar.png?raw=true)
 
 ## Mesaj Yönetimi
 
-![mesajlar](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/mesajlar.png?raw=true)
+![mesajlar](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/mesajlar.png?raw=true)
 
-![mesaj-detay](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/mesajdetay.png?raw=true)
+![mesaj-detay](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/mesajdetay.png?raw=true)
 
 ## Hero Yönetimi
 
-![hero-list](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/herolist.png?raw=true)
+![hero-list](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/herolist.png?raw=true)
 
-![hero-create](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/herocreate.png?raw=true)
+![hero-create](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/herocreate.png?raw=true)
 
 ## Blog Yönetimi
 
-![blog-list](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/bloglist.png?raw=true)
+![blog-list](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/bloglist.png?raw=true)
 
-![blog-create](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/blogcreate.png?raw=true)
+![blog-create](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/blogcreate.png?raw=true)
 
 ## Yorum Yönetimi
 
-![yorum-list](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/yorumlist.png?raw=true)
+![yorum-list](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/yorumlist.png?raw=true)
 
-![yorum-create](https://github.com/furkanturkerr/Travix.WebUI/blob/main/Travix/wwwroot/%C4%B0magesProject/yorumcreaate.png?raw=true)
+![yorum-create](https://github.com/furkanturkerr/Travix/blob/main/Travix.WebUI/wwwroot/%C4%B0magesProject/yorumcreaate.png?raw=true)
 
 ---
